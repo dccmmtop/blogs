@@ -1,1 +1,1 @@
-## study recored
+## study record
