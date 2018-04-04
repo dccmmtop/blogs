@@ -24,7 +24,8 @@ require File.dirname(__FILE__) + '/file_to_require'
 `__FILE__`为常量，表示当前文件的绝对路径，如`/home/oldsong/test.rb`
 * 法四：
 ```ruby
- $LOAD_PATH.unshift(File.dirname(__FILE__))require 'bar' 
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'bar' 
 ```
 先把目录加入LOAD_PATH变量中，然后可直接引用文件名。
 
