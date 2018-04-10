@@ -3,13 +3,17 @@ if ARGV[0] =~ /[0-9]{1,100}/ && File.exist?("/tmp/blogsearch")
   i = 1
   File.open("/tmp/blogsearch","r").each_line do |line|
     if i == ARGV[0].to_i
-      `nohup typora #{line.split(/\s/)[0]} > /dev/null &`
+      Thread.new do 
+        `typora #{line}`
+      end
       exit
     end
     i += 1
   end
   puts "not found"
 else
-  `nohup typora #{ARGV[0]} > /dev/null &`
+  Thread.new do 
+    `typora #{ARGV[0]}`
+  end
   exit
 end
