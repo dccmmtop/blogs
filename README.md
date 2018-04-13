@@ -1,2 +1,2 @@
 ## study record
-<p hidden>13123</p>
+<span style="display:none">13123</p>
