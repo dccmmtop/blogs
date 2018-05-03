@@ -13,7 +13,7 @@ Net::SSH.start("ip", "username",:password => "*****") do |ssh|
   end
   puts "所有文件上传成功\n解析博客..."
   if file_count > 0
-    puts ssh.exec!("cd /var/www/script_blog;/usr/local/rvm/gems/ruby-2.3.3/wrappers/bundle exec rake analysis_blog")
+    puts ssh.exec!("cd /var/www/script_blog && /usr/local/rvm/gems/ruby-2.3.3/wrappers/bundle exec rake analysis_blog")
   end
   puts "\e[32mdone!\e[0m"
 end
