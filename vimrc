@@ -1,3 +1,4 @@
+```vim
 syntax enable
 set background=dark
 " Numbers
@@ -21,6 +22,10 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j  gj
 nnoremap gj j
+" 从系统剪切板粘贴
+nnoremap P "+p
+" 复制到系统剪切板
+vmap Y "+y
 "colorscheme solarized
 colorscheme gruvbox
 "colorscheme molokai
@@ -29,6 +34,9 @@ colorscheme gruvbox
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+" replace
+Plug 'brooth/far.vim'
+
 Plug 'mattn/emmet-vim'
 " coffee script color
 Plug 'kchmck/vim-coffee-script'
@@ -139,7 +147,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名 
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
 "end "
-
+let g:NERDTreeWinPos = "right"
 
 
 " NERDTree config"
@@ -147,4 +155,4 @@ map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
-
+```
