@@ -133,7 +133,12 @@
 
 * 注意：
 
-  在后面创建数据库时，可能会出现缺少依赖的错误，根据提示解决即可。
+  在后面安装pg gem时，可能会出现`You need to install postgresql-server-dev-X.Y for building a server-side extension or libpq-dev for building a client-side applic
+  ation`错误,依次执行：
+  ```shell
+  sudo apt-get install python-psycopg2
+  sudo apt-get install libpq-dev
+  ```
 
 ## nginx passenger 安装
 
