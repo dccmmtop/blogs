@@ -6,8 +6,7 @@
     background-image:url(image-path("1.png"));
   }
 ```
-需要使用`image-path`
-辅助函数，如果直接写图片名称，再开发环境下没有问题，但是部署到线上就会404
+需要使用`image-path`辅助函数，如果直接写图片名称，再开发环境下没有问题，但是部署到线上就会404
 还有另外一种方式
 ```erb
  <img  class="img-circle" src="<%=asset_path('user.png')%>" width="100px;"
