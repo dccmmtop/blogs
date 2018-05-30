@@ -1,21 +1,21 @@
 ## rails验证码
-1. 安装包
+1.安装包
 ```ruby
 gem 'rucaptcha'
 gem 'dalli'
 ```
-2. 配置路由  （最新版本的不用配置路由）
+2.配置路由  （最新版本的不用配置路由）
 ```ruby
 mount RuCaptcha::Engine => "/rucaptcha"
 ```
-3. controller部分
+3.controller部分
 ```ruby
 def create
     @user = User.new(user_params)
     if  verify_rucaptcha?(@user)&&@user.save
     ......
 ```
-4. view部分
+4.view部分
 ```ruby
   <div class="form-group ">
      <%= rucaptcha_input_tag( class:'form-control rucaptcha-text') %>
@@ -23,7 +23,7 @@ def create
   </div>
 ```
 
-5. 实现点击图片刷新验证码
+5.实现点击图片刷新验证码
 ```coffee
  #点击验证码刷新
   $(".rucaptcha-image").click ->
