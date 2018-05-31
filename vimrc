@@ -1,4 +1,5 @@
 ```vim
+" 先下载Plug安装插件，安装地址：https://github.com/junegunn/vim-plug/
 syntax enable
 set background=dark
 " Numbers
@@ -33,6 +34,7 @@ colorscheme gruvbox
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+"   https://github.com/junegunn/vim-plug/   Plug安装地址
 call plug#begin('~/.vim/plugged')
 " replace
 Plug 'brooth/far.vim'
