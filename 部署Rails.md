@@ -77,6 +77,11 @@
   rbenv install --list  # 列出所有 ruby 版本
   rbenv install 2.5.0     # 安装 2.5.0
   ```
+  安转过程可能出现缺少依赖的错误，可参考[这篇文章解决](https://gist.github.com/sandyxu/8aceec7e436a6ab9621f)
+  一般解决办法:
+  ```shell
+  sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6 libreadline6-dev zlib1g zlib1g-dev
+  ```
 
   ```shell
   rbenv versions               # 列出安装的版本
