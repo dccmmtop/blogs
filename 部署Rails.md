@@ -82,22 +82,18 @@
   ```shell
   sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6 libreadline6-dev zlib1g zlib1g-dev
   ```
-
+* 验证安装是否成功
   ```shell
   rbenv versions               # 列出安装的版本
   rbenv version                # 列出正在使用的版本
   ```
-
 * 设置版本
-
   ```shell
   rbenv global 2.5.0      # 默认使用 2.5.0
   rbenv shell 2.5.0       # 当前的 shell 使用 2.5.0, 会设置一个 `RBENV_VERSION` 环境变量
   rbenv local jruby-1.7.3      # 当前目录使用 jruby-1.7.3, 会生成一个 `.rbenv-version` 文件
   ```
-
 * last
-
   ```shell
   rbenv rehash                 # 每当切换 ruby 版本和执行 bundle install 之后必须执行这个命令
   rbenv which irb              # 列出 irb 这个命令的完整路径
@@ -117,6 +113,9 @@
   ```
 
 * 安装nodejs
+  ```shell
+  sudo apt install nodejs
+  ```
 
 ## 数据库
 
@@ -148,6 +147,18 @@
 ## nginx passenger 安装
 
 [这里很详细了](https://www.phusionpassenger.com/library/install/nginx/install/oss/xenial/)
+  ```shell
+  sudo apt-get install -y dirmngr gnupg
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+  sudo apt-get install -y apt-transport-https ca-certificates
+
+
+  sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
+  sudo apt-get update
+
+
+  sudo apt-get install -y nginx-extras passenger
+  ```
 
 * passenger的配置
 
