@@ -1,5 +1,5 @@
 ## linux下文件的加密与解密
-使用GnuPG实现对文件的加密与解密
+使用GnuPG实现对文件的加密与解密[详细参考](https://www.howtoing.com/linux-password-protect-files-with-encryption)
 ### 安装GnuPG
 ```shell
 sudo apt install gnupg
