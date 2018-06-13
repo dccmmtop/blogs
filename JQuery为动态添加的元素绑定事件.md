@@ -1,4 +1,3 @@
-## JQuery为动态添加的元素绑定事件
 ## on()：适用于当前及未来的元素（比如由脚本创建的新元素)
   ```js
   $(selector).on(event,childSelector,data,function,map)
