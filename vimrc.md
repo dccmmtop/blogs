@@ -151,12 +151,12 @@ nnoremap { :bp<CR>
 nnoremap } :bn<CR>
 nnoremap ]\ :bd<CR>
 " Initialize plugin system
-
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
 "文件搜索"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugged/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名 
