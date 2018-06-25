@@ -1,5 +1,4 @@
 ```vim
-" 先下载Plug安装插件，安装地址：https://github.com/junegunn/vim-plug/
 syntax enable
 set background=dark
 " Numbers
@@ -9,6 +8,13 @@ set expandtab
 set autoindent
 set formatoptions+=t
 set shiftwidth=2
+set showmatch
+set cursorline
+let mapleader = ' '
+" 启用缩进折叠
+set fdm=indent
+" 打开文件时，不折叠代码
+set foldlevel=99
 map ; :
 " - 移动到一行末尾 _ 移动到行的第一个非空白字符
 map - $
@@ -28,6 +34,18 @@ nnoremap gj j
 nnoremap P "+p
 " 复制到系统剪切板
 vmap Y "+y
+nmap Y "+y
+" 跳转到上次修改的位置，并移到屏幕中间
+nmap g, g,zz
+nmap g; g;zz
+" 快速编辑vimrc，灵感稍纵即逝
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>vs :vsplit<cr>
+nnoremap <leader>cn :set cursorcolumn!<cr>
+" 打开折叠
+nnoremap <leader>k zozz
+" 折叠
+nnoremap <leader>g zczz
 "colorscheme solarized
 colorscheme gruvbox
 "colorscheme molokai
@@ -156,7 +174,7 @@ nnoremap ]\ :bd<CR>
 call plug#end()
 
 "文件搜索"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/plugged/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名 
@@ -169,4 +187,6 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+
 ```
