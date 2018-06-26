@@ -170,7 +170,7 @@ nnoremap { :bp<CR>
 nnoremap } :bn<CR>
 nnoremap ]\ :bd<CR>
 " Initialize plugin system
-
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
