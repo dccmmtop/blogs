@@ -7,7 +7,7 @@ require "optparse"
 
 def add_files(files)
   puts "连接服务器..."
-  Net::SSH.start("65.49.211.131", "dccmmtop",:password => nil,:port => '29484') do |ssh|
+  Net::SSH.start("ip", "username",:password => nil,:port => 'port') do |ssh|
     file_count = files.size
     puts "需要推送#{file_count}个文件"
     (0...file_count).each do |i|
@@ -33,7 +33,7 @@ end
 def delete_files(files)
   files = files.map{|file| file.strip.gsub(/\.md/,"")}
   puts "连接服务器..."
-  Net::SSH.start("65.49.211.131", "dccmmtop",:password => "dccmmtop",:port => '29484') do |ssh|
+  Net::SSH.start("ip", "username",:password => nil,:port => 'port') do |ssh|
       puts ssh.exec!("cd /home/dccmmtop/rails_app/script_blog && RAILS_ENV=production /home/dccmmtop/.rbenv/shims/bundle exec rake delete_blog[#{files.join(',')}]")
   end
 end
