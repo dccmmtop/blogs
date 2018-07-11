@@ -1,3 +1,4 @@
+###[转载](https://www.jianshu.com/p/4784216b8194)
 简单地说，React Component 通过其定义的几个函数来控制组件在生命周期的各个阶段的动作。
 
 在 ES6 中，一个 React 组件是用一个 class 来表示的（具体可以参考官方文档），如下：
