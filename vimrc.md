@@ -55,8 +55,20 @@ colorscheme gruvbox
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-" replace
-Plug 'brooth/far.vim'
+Plug 'sheerun/vim-polyglot'
+
+Plug 'SirVer/ultisnips'
+
+" Currently, es6 version of snippets is available in es6 branch only
+Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" js代码格式化
+let g:prettier#autoformat = 0
+" 异步格式化
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" 发生语法错误时，不打开新的窗口提示
+let g:prettier#quickfix_enabled = 0
+Plug 'honza/vim-snippets' "optional
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -76,8 +88,6 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -89,12 +99,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
 
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -170,7 +175,7 @@ nnoremap { :bp<CR>
 nnoremap } :bn<CR>
 nnoremap ]\ :bd<CR>
 " Initialize plugin system
-Plug 'ctrlpvim/ctrlp.vim'
+
 
 call plug#end()
 
@@ -178,8 +183,8 @@ call plug#end()
 set runtimepath^=~/.vim/plugged/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-" 设置过滤不进行查找的后缀名 
-" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$' 
+" 设置过滤不进行查找的后缀名
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
 "end "
 let g:NERDTreeWinPos = "right"
 
@@ -188,6 +193,6 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
-
-
+vmap <leader>qn :cal qiniu#get_file_url_from_qiniu()<cr><CR>
+noremap <leader>fa :cal react_native#flush()<cr><CR>
 ```
