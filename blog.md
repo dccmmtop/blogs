@@ -1,3 +1,7 @@
+---
+tags: diy_script
+---
+
 ```ruby
 #!/usr/bin/ruby
 # linux系统安装 ag ,可以利用本脚本在固定的文件下搜索文章,
