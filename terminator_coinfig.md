@@ -1,3 +1,7 @@
+---
+tags: config
+---
+
 ```
 [global_config]
   title_transmit_bg_color = "#009999"
