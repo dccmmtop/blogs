@@ -5,7 +5,7 @@
 
 ### demo
 
-```js
+```jsx
 hideInputBox = () => {
     this.refs.textInput1.blur();
     this.refs.textInput2.blur();
