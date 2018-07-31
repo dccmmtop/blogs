@@ -114,6 +114,20 @@ tags: vs
   ],
   "vim.leader": "<space>",
   "terminal.integrated.rendererType": "dom",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors": {
+    "normal": "#444444",
+    "insert": "#444444",
+    "visual": "#444444",
+    "visualline": "#444444",
+    "visualblock": "#444444",
+    "replace": "#444444"
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#444444",
+    "statusBar.noFolderBackground": "#444444",
+    "statusBar.debuggingBackground": "#444444"
+  }
 }
 ```
