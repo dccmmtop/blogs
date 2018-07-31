@@ -51,7 +51,7 @@ sudo ssserver -p 8388 -k password -m rc4-md5 -d start
 |local_port| 本地端端口|
 | password| 用来加密的密码|
 |timeout| 超时时间（秒）|
-|method}| 加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″, 等等|
+|method| 加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″, 等等|
 
 Tips: 加密方式推荐使用 rc4-md5，因为 RC4 比 AES 速度快好几倍，如果用在路由器上会带来显著性能提升。旧的 RC4 加密之所以不安全是因为 Shadowsocks 在每个连接上重复使用 key，没有使用 IV。现在已经重新正确实现，可以放心使用。更多可以看 issue。
 Tips: 如果需要配置多个用户,可以这样来设置:
