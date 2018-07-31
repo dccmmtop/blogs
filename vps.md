@@ -44,6 +44,7 @@ sudo ssserver -p 8388 -k password -m rc4-md5 -d start
 ```
 
 各字段的含义：
+
 | 字段| 含义|
 |-----|-----|
 |server| 服务器 IP (IPv4/IPv6)，注意这也将是服务端监听的 IP 地址|
