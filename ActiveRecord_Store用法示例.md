@@ -2,7 +2,8 @@
 tags: rails,activeRecirdStore
 ---
 
-###[转载](https://ruby-china.org/topics/32471)
+### [转载](https://ruby-china.org/topics/32471)
+
 <http://api.rubyonrails.org/classes/ActiveRecord/Store.html>
 
 阅读 [http://api.rubyonrails.org](http://api.rubyonrails.org/) 相关的笔记
