@@ -1,5 +1,6 @@
 ---
 tags: rails,console
+date: 2018-08-07 23:58:40
 ---
 
 用 app 来调用 routes，比如 app.posts_path, app.topic_path(1)
