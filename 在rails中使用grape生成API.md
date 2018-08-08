@@ -12,7 +12,7 @@ gem "grape"
 ### 添加 api 文件目录
 
 手动新建 api 目录，如图:
-![http://ogbkru1bq.bkt.clouddn.com/选区_114.png]
+![](http://ogbkru1bq.bkt.clouddn.com/选区_114.png)
 
 ### 加载 api 内文件
 
