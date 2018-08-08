@@ -1,5 +1,6 @@
 ---
 tags: rails,activeRecirdStore
+date: 2018-08-07 22:53:19
 ---
 
 ### [转载](https://ruby-china.org/topics/32471)
