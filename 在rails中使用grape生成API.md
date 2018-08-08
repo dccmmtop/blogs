@@ -106,5 +106,5 @@ end
 ### 测试
 
 ```shell
-curl -X GET -H 'Accedd:xxxxx' http://xxxxx/api/topcis/ping
+curl -X GET -H 'Access:xxxxx' http://xxxxx/api/topcis/ping
 ```
