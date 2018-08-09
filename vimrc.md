@@ -1,3 +1,8 @@
+---
+tags: vimrc
+date: 2018-08-09 17:17:19
+---
+
 ```vim
 syntax enable
 set t_Co=256
@@ -23,10 +28,10 @@ imap <C-k> <Up><End><kEnter>
 imap <C-d> <Home><Del>
 imap <C-d> <Home><Del>
 inoremap jk <ESC>
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 nnoremap k gk
 nnoremap gk k
 nnoremap j  gj
@@ -41,10 +46,15 @@ nmap g, g,zz
 nmap g; g;zz
 " 快速编辑vimrc，灵感稍纵即逝
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>vs :vsplit<cr>
+nnoremap <leader>v :vsplit<cr><c-w>w
+" 调整窗口大小
+"nnoremap <leader>- :10winc <<cr>
+"nnoremap <leader>= :10winc ><cr>
 nnoremap <leader>cn :set cursorcolumn!<cr>
+" 切换窗口
+nnoremap <leader>w <c-w>w
 " 打开折叠
-nnoremap <leader>k zozz
+nnoremap <leader>o zozz
 " 折叠
 nnoremap <leader>g zczz
 "colorscheme solarized
@@ -55,12 +65,16 @@ colorscheme gruvbox
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+" 缩进线
+" Plug 'Yggdroot/indentLine'
+" let g:indentLine_char = '|'
 Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+let javascript_enable_domhtmlcss = 1
 
 Plug 'SirVer/ultisnips'
+Plug 'isRuslan/vim-es6'
 
-" Currently, es6 version of snippets is available in es6 branch only
-Plug 'letientai299/vim-react-snippets', { 'branch': 'es6' }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " js代码格式化
 let g:prettier#autoformat = 0
@@ -175,6 +189,7 @@ nnoremap { :bp<CR>
 nnoremap } :bn<CR>
 nnoremap ]\ :bd<CR>
 " Initialize plugin system
+
 
 
 call plug#end()
