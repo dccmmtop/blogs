@@ -36,20 +36,22 @@ K=KB、M=MB、
 
 1024 B = 1 KB ； 1024 KB = 1 MB ； 1024 MB = 1 GB
 
-> K=kilo
-> KB=kilobyte
-> M=mega
-> MB=megabyte
-> Kb=kilobit
-> Mb=megabit
->
-> 1KB=1024Bytes=2 的 10 次方 Bytes
-> 1MB=1024KB=2 的 20 次方 Bytes
-> 1GB=1024MB=2 的 30 次方 Bytes
-> 1TB=1024GB=2 的 40 次方 Bytes
->
-> 1 byte (B) = 8 bits (b) 字节=8 个二进制位
-> 1 Kilobyte(K/KB)=2^10 bytes=1,024 bytes 千字节
-> 1 Megabyte(M/MB)=2^20 bytes=1,048,576 bytes 兆字节
-> 1 Gigabyte(G/GB)=2^30 bytes=1,073,741,824 bytes 千兆字节
-> 1 Terabyte(T/TB)=2^40 bytes=1,099,511,627,776 bytes 吉字节
+```text
+K=kilo
+KB=kilobyte
+M=mega
+MB=megabyte
+Kb=kilobit
+Mb=megabit
+
+1KB=1024Bytes=2 的 10 次方 Bytes
+1MB=1024KB=2 的 20 次方 Bytes
+1GB=1024MB=2 的 30 次方 Bytes
+1TB=1024GB=2 的 40 次方 Bytes
+
+1 byte (B) = 8 bits (b) 字节=8 个二进制位
+1 Kilobyte(K/KB)=2^10 bytes=1,024 bytes 千字节
+1 Megabyte(M/MB)=2^20 bytes=1,048,576 bytes 兆字节
+1 Gigabyte(G/GB)=2^30 bytes=1,073,741,824 bytes 千兆字节
+1 Terabyte(T/TB)=2^40 bytes=1,099,511,627,776 bytes 吉字节
+```
