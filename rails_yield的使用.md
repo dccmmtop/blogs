@@ -9,6 +9,7 @@ date: 2018-08-12 15:43:39
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- 默认值 -->
   <title><%= content_for(:title) ? (yield :title) : "MillionBlock" %></title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
