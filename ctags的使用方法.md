@@ -21,7 +21,7 @@ apt install ctags
 
 ### 生成 tags
 
-假如我需要经常查看 rails 的源码，从[github](https://github.com/rails/rails)下载 rails 的源码，在本地新建一个专门存放所有源码的文件加`ctags-source`,然后把 rails 的源码移到这个文件夹内，
+假如我需要经常查看 rails 的源码，从[github](https://github.com/rails/rails)下载 rails 的源码，在本地新建一个专门存放所有源码的文件夹`ctags-source`,然后把 rails 的源码移到这个文件夹内，
 在`ctags-_source`目录下执行
 
 ```shell
