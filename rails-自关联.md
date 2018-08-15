@@ -58,6 +58,8 @@ has_many :grandchildren, :through => :children, :source => :children
 end
 ```
 
+![](http://ogbkru1bq.bkt.clouddn.com/选区_124.png)
+
 > 作者：李小西 033
 
 > 链接：https://www.jianshu.com/p/076b5fec4dad
