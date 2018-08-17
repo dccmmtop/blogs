@@ -1,10 +1,15 @@
-## Linux下产生随机密码10方法
+---
+tags: linux,加密
+date: 2018-05-29 15:51:43
+---
 
-Linux的特点之一，就是给我们提供了多种选择。一种目的，可以多种方法解决。 如何在Linux下产生随机密码呢?我给大家收集了10来种方法，仅供参考。用得着的就mark下。对于下面的任何命令，都可以控制输出结果的长度。
+## Linux 下产生随机密码 10 方法
 
-Linux的特点之一，就是给我们提供了多种选择。一种目的，可以多种方法解决。
+Linux 的特点之一，就是给我们提供了多种选择。一种目的，可以多种方法解决。 如何在 Linux 下产生随机密码呢?我给大家收集了 10 来种方法，仅供参考。用得着的就 mark 下。对于下面的任何命令，都可以控制输出结果的长度。
 
-如何在Linux下产生随机密码呢?我给大家收集了10来种方法，仅供参考。用得着的就mark下。对于下面的任何命令，都可以控制输出结果的长度。
+Linux 的特点之一，就是给我们提供了多种选择。一种目的，可以多种方法解决。
+
+如何在 Linux 下产生随机密码呢?我给大家收集了 10 来种方法，仅供参考。用得着的就 mark 下。对于下面的任何命令，都可以控制输出结果的长度。
 
 [![Linux下产生随机密码10方法 ](https://s4.51cto.com/wyfs02/M01/A0/E2/wKioL1mfkRbjZTC6AANa7pkjeA0889.png-wh_651x-s_702774202.png)](https://s4.51cto.com/wyfs02/M01/A0/E2/wKioL1mfkRbjZTC6AANa7pkjeA0889.png-wh_651x-s_702774202.png)
 
@@ -14,7 +19,7 @@ Linux的特点之一，就是给我们提供了多种选择。一种目的，可
 date +%s | sha256sum | base64 | head -c 32 ; echo
 ```
 
-上述命令使用SHA来哈希日期，输出头32个字节。
+上述命令使用 SHA 来哈希日期，输出头 32 个字节。
 
 **#2**
 
@@ -22,7 +27,7 @@ date +%s | sha256sum | base64 | head -c 32 ; echo
 < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
 ```
 
-上述命令使用内嵌的/dev/urandom，只输出字符，结果取头32个。
+上述命令使用内嵌的/dev/urandom，只输出字符，结果取头 32 个。
 
 **#3**
 
@@ -30,7 +35,7 @@ date +%s | sha256sum | base64 | head -c 32 ; echo
 openssl rand -base64 32
 ```
 
-上述命令使用系统自带的openssl的随机特点来产生随机密码
+上述命令使用系统自带的 openssl 的随机特点来产生随机密码
 
 **#4**
 
@@ -60,7 +65,7 @@ strings /dev/urandom | grep -o ‘[[:alnum:]]’ | head -n 30 | tr -d ‘\n’; 
 dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev
 ```
 
-上述命令使用命令dd的强大功能
+上述命令使用命令 dd 的强大功能
 
 **#8**
 
@@ -76,7 +81,7 @@ dd if=/dev/urandom bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | r
 randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
 ```
 
-使用randpw随时产生随机密码，可以把它放到~/.bashrc文件里面。
+使用 randpw 随时产生随机密码，可以把它放到~/.bashrc 文件里面。
 
 **#10**
 
