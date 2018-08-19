@@ -24,6 +24,10 @@ date: 2018-08-17 14:40:07
 
 ![](http://ogbkru1bq.bkt.clouddn.com/选区_137.png)
 
+### rails API
+
+![](http://ogbkru1bq.bkt.clouddn.com/选区_140.png)
+
 但是，如果我们在整个应用程序中的任何地方都不需要这种行为而不仅仅是单个模型呢？
 
 ### 全局跳过 belongs_to 存在验证
