@@ -16,6 +16,8 @@ set formatoptions+=t
 set shiftwidth=2
 set showmatch
 set cursorline
+set tags=/home/mc/code/ctag_source/tags
+set tags+=tags;
 let mapleader = ' '
 " 启用缩进折叠
 set fdm=indent
@@ -27,11 +29,15 @@ map - $
 imap <C-k> <Up><End><kEnter>
 imap <C-d> <Home><Del>
 imap <C-d> <Home><Del>
+nnoremap <c-]> <c-]>zz
 inoremap jk <ESC>
 " noremap <Up> <Nop>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
+" 删除至行首
+nnoremap d0 v0d==
+nnoremap d_ v0d==
 nnoremap k gk
 nnoremap gk k
 nnoremap j  gj
@@ -79,7 +85,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " js代码格式化
 let g:prettier#autoformat = 0
 " 异步格式化
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+autocmd BufWritePre *.md PrettierAsync
 " 发生语法错误时，不打开新的窗口提示
 let g:prettier#quickfix_enabled = 0
 Plug 'honza/vim-snippets' "optional
