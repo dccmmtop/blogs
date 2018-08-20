@@ -5,8 +5,9 @@ date: 2018-08-20 17:34:13
 
 ### 安装 trash-cli
 
-回收站的命令行模式+
 `sudo apt install trash-cli`
+
+trash-cli 是回收站的命令行模式
 
 ### 映射
 
