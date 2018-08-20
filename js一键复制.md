@@ -12,13 +12,16 @@ date: 2018-08-20 10:38:16
 ### 实现原理
 
 浏览器提供了 copy 命令 ，可以复制选中的内容
+
 `document.execCommand("copy")`
+
 如果是输入框，可以通过 select() 方法，选中输入框的文本，然后调用 copy 命令，将文本复制到剪切板
-但是 `select()` 方法只对 `<input>` 和`<textarea>` 有效，
+**但是 `select()` 方法只对 `<input>` 和`<textarea>` 有效**
 
 ### 解决方案
 
 隐藏`<input>` 按钮，注意：**不可采用 `hidden` 或者 `visibility:none`的方式隐藏，否则复制不生效**
+
 用如下方式隐藏：
 
 ```css
