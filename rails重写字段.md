@@ -7,6 +7,8 @@ date: 2018-08-20 18:09:07
 
 如： 当查询`recommand_code`的值时，若存在，则返回，若不存在则创建一个包含大写字母和数字的 6 为随机字符串
 
+主要是 `read_attribute()` 和 `write_attribute()` 的用法
+
 ```ruby
 def recommand_code
   #  重写 recommand_code 字段
