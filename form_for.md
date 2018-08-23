@@ -27,7 +27,7 @@ date: 2018-08-23 15:26:20
 
 - `:namespace` - 表单的命名空间，以确保表单元素上 id 属性的唯一性。 namespace 属性将在生成的 HTML id 上以下划线为前缀。
 
-- `:method`- 指明表单的提交方式，通常使用`get` 或者 `post` 方式提交，如果使用 “patch”, “put”, “delete“ 等其他的方式提交时，会成生成一个 name 等于`_method`的隐藏`input`标签,来特别指明提交的方式，如果表单是异步的，那么默认的提交方式是`patch`
+- `:method`- 指明表单的提交方式，通常使用`get` 或者 `post` 方式提交，如果使用 “patch”, “put”, “delete“ 等其他的方式提交时，会成生成一个 name 等于`_method`的隐藏`input`标签,来特别指明提交的方式，如果传给`form_for`的是一个存在的实例对象那么默认的提交方式是`patch`，比如（edit）,如果传来的对象不存在，那么默认的提交方式是`post` 比如（new）
 
 - `:authenticity_token`-在表单中使用的真实性令牌，如果你需要自定义，或者根本不需要令牌时，可以通过设置 config.action_view.embed_authenticity_token_in_remote_forms = false 来省略嵌入的真实性令牌。当您对表单进行片段缓存时，这很有用。 远程表单从元标记中获取真实性标记，因此除非您支持没有 JavaScript 的浏览器，否则不需要嵌入。
 
