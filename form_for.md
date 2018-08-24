@@ -1,5 +1,5 @@
 ---
-tags: form_for,rails
+tags: form-for,rails
 date: 2018-08-23 15:26:20
 ---
 
@@ -36,3 +36,98 @@ date: 2018-08-23 15:26:20
 - `:enforce_utf8`- 如果设置`false`，将不会生成 name 属性为`utf-8`的标签
 
 - `:html` - 设置表单的 html 属性，如`class` `style` ...
+
+### 带模型的表单
+
+在上面的例子中，我们发现 form_for 可以接收符号和字符串，同时还可以接受模型对象本身，例如:
+
+```erb
+<%= form_for @post do |f| %>
+  ...
+<% end %>
+```
+
+在 controller 中，我们可以通过`params[:post][...]`来获得参数，我们还可以改变这个参数名字，如：
+
+```erb
+<%= form_for(@person, as: :client) do |f| %>
+  ...
+<% end %>
+```
+
+此时就是`params[:client][...]`
+
+另外，表单里面的初始值是根据所给的 modle 中获取的，不管他是不是一个实例变量,如： 有一个本地变量 post
+
+```erb
+<%= form_for(post) do |f| %>
+  ...
+<% end %>
+```
+
+### action url 的书写方式
+
+就像上面的例子中，我们没有显示的指出表单应该提交到何处，但是， `form_for`已经自动帮我们设置了`url`,这个默认的设置规则是有 `config/routes.rb`中理由决定的。
+有以下几个例子：
+
+```erb
+<%= form_for @post do |f| %>
+  ...
+<% end %>
+```
+
+等同于
+
+```erb
+<%= form_for @post, as: :post, url: post_path(@post), method: :patch, html: { class: "edit_post", id: "edit_post_45" } do |f| %>
+  ...
+<% end %>
+```
+
+创建一个新的 modled 对象
+
+```erb
+<%= form_for(Post.new) do |f| %>
+  ...
+<% end %>
+```
+
+等同于
+
+```erb
+<%= form_for @post, as: :post, url: posts_path, html: { class: "new_post", id: "new_post" } do |f| %>
+  ...
+<% end %>
+```
+
+我们也可以指定`url`
+
+```erb
+<%= form_for(@post, url: super_posts_path) do |f| %>
+  ...
+<% end %>
+```
+
+或者指定返回的格式：
+
+```erb
+<%= form_for(@post, format: :json) do |f| %>
+  ...
+<% end %>
+```
+
+对命令空间的路由，像 `admin_post_url`:
+
+```erb
+<%= form_for([:admin, @post]) do |f| %>
+ ...
+<% end %>
+```
+
+如果您的资源已定义关联，则您希望在给定路由设置正确的情况下向文档添加评论:
+
+```erb
+<%= form_for([@document, @comment]) do |f| %>
+ ...
+<% end %>
+```
