@@ -1,5 +1,5 @@
 ---
-tags: rails,api
+tags: rails,api,grape
 date: 2018-08-08 11:29:47
 ---
 
@@ -7,6 +7,9 @@ date: 2018-08-08 11:29:47
 
 ```ruby
 gem "grape"
+gem 'grape-swagger'
+# 生成 UI
+gem 'grape-swagger-rails'
 ```
 
 ### 添加 api 文件目录
@@ -30,6 +33,9 @@ config.autoload_paths += Dir[Rails.root.join('app')]
 
 ```ruby
 mount Api::ApplicationApi => '/api'
+
+# api 文档的路由
+mount GrapeSwaggerRails::Engine => '/apidoc'
 ```
 
 `application_api.rb`文件内容如下
@@ -50,6 +56,20 @@ module Api
     end
     # 要挂载的api
     mount Api::TopicsApi => '/topics' #xxxx/api/topics/
+
+    # 配置api文档
+    # 首页显示内容
+    GrapeSwaggerRails.options.url = '/api/swagger_doc'
+    # 动态设置 base_url
+    GrapeSwaggerRails.options.before_action do
+      GrapeSwaggerRails.options.app_url = request.protocol + request.host_with_port
+    end
+    # api 列表显示方式
+    GrapeSwaggerRails.options.doc_expansion = 'list'
+    # 是否隐藏 api_key的输入框
+    GrapeSwaggerRails.options.hide_api_key_input = true
+    # 生成api 文档
+    add_swagger_documentation
   end
 end
 ```
@@ -103,6 +123,10 @@ module Api
   end
 end
 ```
+
+### api 文档 UI
+
+![](http://ogbkru1bq.bkt.clouddn.com/1535269780.png)
 
 ### 测试
 
