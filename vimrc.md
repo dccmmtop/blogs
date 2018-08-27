@@ -16,8 +16,8 @@ set formatoptions+=t
 set shiftwidth=2
 set showmatch
 set cursorline
-set tags=/home/mc/code/ctag_source/tags
-set tags+=tags;
+" set tags=/home/mc/code/ctag_source/tags
+set tags=tags;
 let mapleader = ' '
 " 启用缩进折叠
 set fdm=indent
@@ -63,6 +63,7 @@ nnoremap <leader>w <c-w>w
 nnoremap <leader>o zozz
 " 折叠
 nnoremap <leader>g zczz
+nnoremap <leader>s :%s/\s\+$//g<cr>
 "colorscheme solarized
 colorscheme gruvbox
 "colorscheme molokai
@@ -216,5 +217,5 @@ map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 vmap <leader>qn :cal qiniu#get_file_url_from_qiniu()<cr><CR>
-noremap <leader>fa :cal react_native#flush()<cr><CR>
+n
 ```
