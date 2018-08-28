@@ -9,10 +9,10 @@ date: 2018-08-28 12:26:47
 User.page(params[:page]).per(2)。
 ```
 
-但是有时会有比较复杂的查询，只考 ORM （对象关系映射）没有办法完成。需要用原生的 sql 语句。简单例子如下：
+但是有时会有比较复杂的查询，只依赖 ORM （对象关系映射）没有办法完成。需要用原生的 sql 语句。简单例子如下：
 
 ```ruby
-@data = User.find_by_sql("select * from users,topics,likes,comments where .......")
+@data = User.find_by_sql("select * from users,topics,likes,comments where topics.user_id = users.id and likes.type = comments.status")
 ```
 
 此时`@data`是一个数组，该如何对他进行分页呢？
