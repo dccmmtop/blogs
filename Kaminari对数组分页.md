@@ -1,7 +1,4 @@
----
-tags: rails,分页
-date: 2018-08-28 12:26:47
----
+---tags: rails,分页 date: 2018-08-28 12:26:47 ---
 
 在`controller`经常使用的方式是：
 
@@ -35,3 +32,5 @@ User.page(params[:page]).per(2)。
 
 以上方式可以完成分页功能，但是当点击每一页时， 都会执行一次所有的查询，而不是 `LIMIT = 10 OFFSET = xxx`,影响效率
 有一个解决办法是，对 `@data`加[缓存](http://dccmm.world/topics/rails-%E7%BC%93%E5%AD%98%E4%B9%8B%E4%BD%8E%E5%B1%82%E7%BC%93%E5%AD%98)
+
+第二种办法就是手动分页 参考[这篇文章](http://jameshuynh.com/rails/paginate/find_by_sql/2017/09/30/how-to-paginate-rails-find-by-sql-result/)
