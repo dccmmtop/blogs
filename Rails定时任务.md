@@ -39,4 +39,4 @@ date: 2018-09-01 16:00:05
 
   此时定时任务就在运行了，通过 `crontab -l`查看正在运行的定时任务
 
-  ###[ 如何编写任务 `rake xxx` ]()
+  ### [ 如何编写任务 `rake xxx` ](http://dccmm.world/topics/Rails%E4%B8%AD%E7%BC%96%E5%86%99%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%BB%E5%8A%A1)
