@@ -3,8 +3,6 @@ tags: rake,task
 date: 2018-05-29 16:03:39
 ---
 
-## Rails 中编写自己的任务
-
 我们都用过 `rake db:migrate` `rake db:create`等，我们可以编写自己的任务。
 
 - 在`lib/tasks`新建一个文件，后缀为`.rake` 加入我要编写的任务是 mv_log ，文件名为`mv_log.rake`
