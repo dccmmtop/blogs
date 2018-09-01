@@ -1,21 +1,24 @@
-## Rails定时任务
+---
+tags: rails,whenever
+date: 2018-09-01 16:00:05
+---
 
-有一个gem包`whenever` 是用来写定时任务的，他的作用主要是将ruby语法转换成crontab的形式，所以本质上还是用crontab来实现定时任务的。
+有一个 gem 包`whenever` 是用来写定时任务的，他的作用主要是将 ruby 语法转换成 crontab 的形式，所以本质上还是用 crontab 来实现定时任务的。
 
-* 检查系统中是否有crontab # 默认都有
-* 检查服务是否启动 `service cron status` 
-* 启动服务 `service cron start`
-* 停止服务 `service cron stop`
-* 重启服务 `service cron restart`
+- 检查系统中是否有 crontab # 默认都有
+- 检查服务是否启动 `service cron status`
+- 启动服务 `service cron start`
+- 停止服务 `service cron stop`
+- 重启服务 `service cron restart`
 
-#### 安装whenever
+#### 安装 whenever
 
-* 在Gemfile 中 `gem 'whenever', :require => false`
-* 生成`config/schedule.rb`文件 执行 `wheneverize`
+- 在 Gemfile 中 `gem 'whenever', :require => false`
+- 生成`config/schedule.rb`文件 执行 `wheneverize`
 
 #### 执行周期任务
 
-* 添加周期任务
+- 添加周期任务
 
   > 在`schedule.rb`文件中添加
   >
@@ -26,16 +29,14 @@
   > end
   > ```
 
-* 执行周期任务  ,在rails项目下
+- 执行周期任务 ,在 rails 项目下
 
-  `whenever -i`  # 更新schedule.rb中的任务到cronjob中
+  `whenever -i` # 更新 schedule.rb 中的任务到 cronjob 中
 
-  ` whenever -w`  # 执行周期性任务
+  `whenever -w` # 执行周期性任务
 
-  可以合并为 ` whenever -iw`
+  可以合并为 `whenever -iw`
 
   此时定时任务就在运行了，通过 `crontab -l`查看正在运行的定时任务
 
   ###[ 如何编写任务 `rake xxx` ]()
-
-  
