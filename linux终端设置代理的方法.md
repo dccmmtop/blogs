@@ -20,7 +20,7 @@ export http_proxy="socks5://127.0.0.1:1080"
 export https_proxy="socks5://127.0.0.1:1080"
 ```
 
-![](http://ogbkru1bq.bkt.clouddn.com/选区_010.png)
+![我是一张图片，但是你看不到我](http://ogbkru1bq.bkt.clouddn.com/选区_010.png)
 
 其中 `1080是soket监听的本地端口`
 
