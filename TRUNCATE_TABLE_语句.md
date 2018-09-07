@@ -3,7 +3,7 @@ tags: postgresql
 date: 2018-09-07 09:06:40
 ---
 
-TRUNCATE TABLE 语句的用途是清空表内容。不带 WHERE 条件子句的 DELETE 语句也表示清空表的内容。
+TRUNCATE TABLE 语句的用途是**清空表内容。**不带 WHERE 条件子句的 DELETE 语句也表示清空表的内容。
 
 从执行结果看，两者实现了相同的功能，**但两者实现的原理是不样的。**
 
