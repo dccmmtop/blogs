@@ -10,5 +10,5 @@ TRUNCATE TABLE 语句的用途是清空表内容。不带 WHERE 条件子句的 
 TRUNCATE TABLE 是 DDL 语句，即数据定义语句，相当于用重新定义一个新表的方法把原先表的内容直接丢弃了，所以 TRUNCATE TABLE 执行起来很快，而 DELETE 是 DML 语句，可以认为 DELETE 是把数据一条一条地删除，若要删除很多行数据，就会比较慢。如果想把表 student_bak 中的数据清理掉，则可以使用如下命令
 
 ```sql
-TRUNCATE TABLE student bak
+TRUNCATE TABLE student_bak
 ```
