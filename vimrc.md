@@ -16,6 +16,8 @@ set formatoptions+=t
 set shiftwidth=2
 set showmatch
 set cursorline
+" def end 跳转  括号跳转
+runtime macros/matchit.vim
 " set tags=/home/mc/code/ctag_source/tags
 set tags=tags;
 let mapleader = ' '
@@ -26,8 +28,8 @@ set foldlevel=99
 map ; :
 " - 移动到一行末尾 _ 移动到行的第一个非空白字符
 map - $
+vmap - $h
 imap <C-k> <Up><End><kEnter>
-imap <C-d> <Home><Del>
 imap <C-d> <Home><Del>
 nnoremap <c-]> <c-]>zz
 inoremap jk <ESC>
@@ -35,9 +37,11 @@ inoremap jk <ESC>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
+
 " 删除至行首
 nnoremap d0 v0d==
 nnoremap d_ v0d==
+" 屏幕行 与 真实行
 nnoremap k gk
 nnoremap gk k
 nnoremap j  gj
@@ -52,7 +56,6 @@ nmap g, g,zz
 nmap g; g;zz
 " 快速编辑vimrc，灵感稍纵即逝
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>v :vsplit<cr><c-w>w
 " 调整窗口大小
 "nnoremap <leader>- :10winc <<cr>
 "nnoremap <leader>= :10winc ><cr>
@@ -64,6 +67,15 @@ nnoremap <leader>o zozz
 " 折叠
 nnoremap <leader>g zczz
 nnoremap <leader>s :%s/\s\+$//g<cr>
+
+" 不要删除末尾的空格
+nnoremap <leader>rm :Emodel
+nnoremap <leader>rc :Econtroller
+nnoremap <leader>rv :Eview
+nnoremap <leader>rh :Ehelper
+nnoremap <leader>rj :Ejavascript
+nnoremap <leader>rs :Estylesheet
+nnoremap <leader>rt :Etask
 "colorscheme solarized
 colorscheme gruvbox
 "colorscheme molokai
@@ -81,7 +93,7 @@ let javascript_enable_domhtmlcss = 1
 
 Plug 'SirVer/ultisnips'
 Plug 'isRuslan/vim-es6'
-
+Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " js代码格式化
 let g:prettier#autoformat = 0
@@ -216,6 +228,6 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
-vmap <leader>qn :cal qiniu#get_file_url_from_qiniu()<cr><CR>
-n
+noremap <leader>fa :cal react_native#flush()<cr><CR>
+noremap <leader>qn :cal qiniu#get_picture_url()<cr><CR>
 ```
