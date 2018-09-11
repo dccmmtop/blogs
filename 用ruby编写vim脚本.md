@@ -55,3 +55,7 @@ noremap <leader>qn :cal qiniu#get_picture_url()<cr><CR>
 ### vim API
 
 在 vim 中执行`:h ruby` 查看 vim 提供 ruby 的 API
+
+### 演示
+
+![](http://ogbkru1bq.bkt.clouddn.com/8989358377354.gif)
