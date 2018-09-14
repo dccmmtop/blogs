@@ -7,7 +7,7 @@ date: 2018-05-29 15:26:09
 
 > 在服务器添加一个新的用户，用户名为 deploy[教程]()
 
-- 执行命令`sudo adduser username`
+- 执行命令`sudo adduser 用户名`
 - 按提示输入密码
 - 设置一些个人信息，可以直接按 enter 键，设为空
 
