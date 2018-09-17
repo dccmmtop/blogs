@@ -122,7 +122,8 @@ date: 2018-05-29 15:26:09
 
 - 安装 nodejs
   ```shell
-  sudo apt install nodejs
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  sudo apt-get install -y nodejs
   ```
 
 ### 数据库
