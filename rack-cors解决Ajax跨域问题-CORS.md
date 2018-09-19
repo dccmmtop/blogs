@@ -129,7 +129,7 @@ Access-Control-Allow-Credentials: true
 
 这样，我们便在 rails 中解决了 Ajax 的跨域请求资源的问题，项目也可以继续向前开发了。
 
-```
+```txt
  作者：vito1994
  链接：https://www.jianshu.com/p/c54a1dbaab24
  來源：简书
