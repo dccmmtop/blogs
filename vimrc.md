@@ -31,6 +31,7 @@ map - $
 vmap - $h
 imap <C-k> <Up><End><kEnter>
 imap <C-d> <Home><Del>
+nnoremap <leader>log :AnsiEsc<cr>
 nnoremap <c-]> <c-]>zz
 inoremap jk <ESC>
 " noremap <Up> <Nop>
@@ -38,6 +39,7 @@ inoremap jk <ESC>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
 
+nnoremap :e :w<cr>:e<cr>
 " 删除至行首
 nnoremap d0 v0d==
 nnoremap d_ v0d==
@@ -90,7 +92,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
-
+Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'SirVer/ultisnips'
 Plug 'isRuslan/vim-es6'
 Plug 'terryma/vim-multiple-cursors'
@@ -169,40 +171,40 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 if g:airline_powerline_fonts == 0
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-  let g:airline_left_sep = '▶'
-  let g:airline_left_alt_sep = '❯'
-  let g:airline_right_sep = '◀'
-  let g:airline_right_alt_sep = '❮'
-  let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.branch = '§'
-  let g:airline_symbols.whitespace = 'Ξ'
-  let g:airline_symbols.readonly = ''
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '§'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.readonly = ''
 endif
 let g:airline_mode_map = {
-      \ '__' : '-',
-      \ 'n'  : '标准',
-      \ 'i'  : '插入',
-      \ 'R'  : '替换',
-      \ 'c'  : '命令行',
-      \ 'v'  : '可视',
-      \ 'V'  : '可视',
-      \ 's'  : '选择',
-      \ 'S'  : '选择'
-      \}
+\ '__' : '-',
+\ 'n'  : '标准',
+\ 'i'  : '插入',
+\ 'R'  : '替换',
+\ 'c'  : '命令行',
+\ 'v'  : '可视',
+\ 'V'  : '可视',
+\ 's'  : '选择',
+\ 'S'  : '选择'
+\}
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':p:t' "只显示文件名，不显示路径内容。
 
 if g:airline_powerline_fonts == 0
-  let g:airline#extensions#tabline#left_sep = '▶'
-  let g:airline#extensions#tabline#left_alt_sep = '❯'
-  let g:airline#extensions#tabline#right_sep = '◀'
-  let g:airline#extensions#tabline#right_alt_sep = '❮'
+let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#left_alt_sep = '❯'
+let g:airline#extensions#tabline#right_sep = '◀'
+let g:airline#extensions#tabline#right_alt_sep = '❮'
 endif
 " " 映射切换buffer的键位
 nnoremap { :bp<CR>
@@ -228,6 +230,5 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
-noremap <leader>fa :cal react_native#flush()<cr><CR>
 noremap <leader>qn :cal qiniu#get_picture_url()<cr><CR>
 ```
