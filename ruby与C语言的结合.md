@@ -11,7 +11,7 @@ date: 2018-09-21 17:03:09
 
 ```ruby
 require "inline"
-class Object
+class MyTest
   inline do |builder|
     builder.include "<math.h>"
     builder.c "
@@ -27,4 +27,7 @@ class Object
     "
   end
 end
+
+t = MyTest.new
+t.sum
 ```
