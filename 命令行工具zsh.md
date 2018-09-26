@@ -36,25 +36,15 @@ _zsh 主题 Powerlevel9k_
 
 ```shell
 $ alias | grep -i git | sort -R | head -10
-
 g=git
-
 ga='git add'
-
 gapa='git add --patch'
-
 gap='git apply'
-
 gdt='git diff-tree --no-commit-id --name-only -r'
-
 gau='git add --update'
-
 gstp='git stash pop'
-
 gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
-
 gcs='git commit -S'
-
 glg='git log --stat'
 ```
 
@@ -70,7 +60,6 @@ git golang fedora docker oc sudo vi-mode virtualenvwrapper
 
 ```shell
 ls='ls --color=tty'
-
 grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 ```
 
@@ -128,21 +117,13 @@ $ dirs -v
 0       ~
 1       /var/log
 2       /var/opt
-
 3       /usr/bin
-
 4       /usr/local
-
 5       /usr/lib
-
 6       /tmp
-
 7       ~/Projects/Opensource.com/zsh-5tips
-
 8       ~/Projects
-
 9       ~/Projects/ansible
-
 10      ~/Documents
 ```
 
@@ -150,13 +131,9 @@ $ dirs -v
 
 ```shell
 $ pwd
-
 /home/rgerardi
-
 $ ~4
-
 $ pwd
-
 /usr/local
 ```
 
@@ -164,23 +141,14 @@ $ pwd
 
 ```shell
 d='dirs -v | head -10'
-
 1='cd -'
-
 2='cd -2'
-
 3='cd -3'
-
 4='cd -4'
-
 5='cd -5'
-
 6='cd -6'
-
 7='cd -7'
-
 8='cd -8'
-
 9='cd -9'
 ```
 
@@ -188,37 +156,21 @@ d='dirs -v | head -10'
 
 ```shell
 $ d
-
 0       /usr/local
-
 1       ~
-
 2       /var/log
-
 3       /var/opt
-
 4       /usr/bin
-
 5       /usr/lib
-
 6       /tmp
-
 7       ~/Projects/Opensource.com/zsh-5tips
-
 8       ~/Projects
-
 9       ~/Projects/ansible
-
 $ pwd
-
 /usr/local
-
 $ 6
-
 /tmp
-
 $ pwd
-
 /tmp
 ```
 
@@ -226,11 +178,8 @@ $ pwd
 
 ```shell
 $ pwd
-
 /home/rgerardi
-
 $ p/o/z (TAB)
-
 $ Projects/Opensource.com/zsh-5tips/
 ```
 
@@ -244,7 +193,6 @@ zsh 强大的补全系统是它的卖点之一。为了简便起见，我称它�
 
 ```shell
 autoload -U compinit
-
 compinit
 ```
 
@@ -256,7 +204,6 @@ zsh 拥有一个巨大而又完整的库，因此它能识别许多不同的命�
 
 ```shell
 $ tar -xzvf test1.tar.gz test1/file1 (TAB)
-
 file1 file2
 ```
 
@@ -264,30 +211,16 @@ file1 file2
 
 ```shell
 $ ls
-
 original  plan.txt  zsh-5tips.md  zsh_theme_small.png
-
 $ git status
-
 On branch master
-
 Your branch is up to date with 'origin/master'.
-
-
 Changes not staged for commit:
-
   (use "git add <file>..." to update what will be committed)
-
   (use "git checkout -- <file>..." to discard changes in working directory)
-
-
         modified:   zsh-5tips.md
-
-
 no changes added to commit (use "git add" and/or "git commit -a")
-
 $ git add (TAB)
-
 $ git add zsh-5tips.md
 ```
 
@@ -295,37 +228,21 @@ zsh 还能识别命令行选项，同时它只会提示与选中子命令相关�
 
 ```shell
 $ git commit - (TAB)
-
 --all                  -a       -- stage all modified and deleted paths
-
 --allow-empty                   -- allow recording an empty commit
-
 --allow-empty-message           -- allow recording a commit with an empty message
-
 --amend                         -- amend the tip of the current branch
-
 --author                        -- override the author name used in the commit
-
 --branch                        -- show branch information
-
 --cleanup                       -- specify how the commit message should be cleaned up
-
 --date                          -- override the author date used in the commit
-
 --dry-run                       -- only show the list of paths that are to be committed or not, and any untracked
-
 --edit                 -e       -- edit the commit message before committing
-
 --file                 -F       -- read commit message from given file
-
 --gpg-sign             -S       -- GPG-sign the commit
-
 --include              -i       -- update the given files and commit the whole index
-
 --interactive                   -- interactively update paths in the index file
-
 --message              -m       -- use the given message as the commit message
-
 ... TRUNCATED ...
 ```
 
@@ -353,11 +270,8 @@ $ bindkey -v
 
 ```shell
 $ less /var/log/dnf.log
-
 /var/log/dnf.log: Permission denied
-
 $ sudo !!
-
 $ sudo less /var/log/dnf.log
 ```
 
