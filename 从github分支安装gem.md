@@ -21,21 +21,21 @@ gem 'rails', :git => "git://github.com/rails/rails.git", :tag => "v2.3.5"
 
 - 克隆仓库
 
-```shell
-$ git clone git://github.com/odorcicd/authlogic.git
-cd authlogic
-```
+  ```shell
+  $ git clone git://github.com/odorcicd/authlogic.git
+  cd authlogic
+  ```
 
 - 切换分支
 
-`$ git checkout -b rails3 remotes/origin/rails3`
+  `$ git checkout -b rails3 remotes/origin/rails3`
 
 - 构建 gem
 
-`$ rake build gem`
+  `$ rake build gem`
 
 - 安装 gem
 
-`$ gem install pkg/gemname-1.23.gem`
+  `$ gem install pkg/gemname-1.23.gem`
 
 [stackflow](https://stackoverflow.com/questions/2823492/install-gem-from-github-branch)
