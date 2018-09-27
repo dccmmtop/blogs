@@ -19,22 +19,22 @@ gem 'rails', :git => "git://github.com/rails/rails.git", :tag => "v2.3.5"
 
 ### 本地构建
 
-1.  克隆仓库
+- 克隆仓库
 
 ```shell
 $ git clone git://github.com/odorcicd/authlogic.git
 cd authlogic
 ```
 
-2.  切换分支
+- 切换分支
 
 `$ git checkout -b rails3 remotes/origin/rails3`
 
-3.  构建 gem
+- 构建 gem
 
 `$ rake build gem`
 
-4.  安装 gem
+- 安装 gem
 
 `$ gem install pkg/gemname-1.23.gem`
 
