@@ -14,6 +14,7 @@ gem 'rails', :git => "git://github.com/rails/rails.git", :tag => "v2.3.5"
 ```
 
 这种方式不需要再从本地构建 gem，需要指明源码位置，以及 ref,或者 branch 或者 tag
+
 详情请看[ 官网 ](https://bundler.io/man/gemfile.5.html#GIT)
 
 ### 本地构建
