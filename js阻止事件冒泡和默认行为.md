@@ -17,7 +17,7 @@ event.stopPropagation();
 event.preventDefault();
 ```
 
-### 阻止事件冒泡以及阻止 mo 默认行为
+### 阻止事件冒泡以及阻止默认行为
 
 ```js
 return false;
