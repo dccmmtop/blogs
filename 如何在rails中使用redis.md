@@ -3,7 +3,7 @@ tags: rails,redis
 date: 2018-10-29 17:18:24
 ---
 
-随着用户数量的增长，我们的程序将要面临这大量数据的请求，如果不处理好这些请求，我们的 application 将会变的很慢，甚至崩溃。本文使用 redis(内存数据存储)这个工具来解决部分问题。
+随着用户数量的增长，我们的程序将要面临着大量数据的请求，如果不处理好这些请求，我们的 application 将会变的很慢，甚至崩溃。本文使用 redis(内存数据存储)这个工具来解决部分问题。
 
 首先我们可以使用 `brew`,`apt`,`docker`来安装 redis，当然了，我们也需要 rails。我们来构建一个在线的售票管理系统，下面是基本的数据结构。
 
@@ -35,7 +35,7 @@ class Event < ApplicationRecord
 end
 ```
 
-这段代码将会使用 SQL 来查询数据，如果数据量非常大，那么这个查询将会很慢很慢，为了更快的或者查询结果，我们可以暂时把这段查询的结果缓存起来。首先在我们的 rails application 中需要一个可以使用的缓存，向`Gemfile`文件添加`gem redis-rails`，然后在`install. In config/environments/development.rb`，添加如下配置：
+这段代码将会使用 SQL 来查询数据，如果数据量非常大，那么这个查询将会很慢很慢，为了更快的或者查询结果，我们可以暂时把这段查询的结果缓存起来。首先在我们的 rails application 中需要一个可以使用的缓存，向`Gemfile`文件添加`gem redis-rails`，然后在`config/environments/development.rb`，添加如下配置：
 
 ```ruby
 config.cache_store = :redis_store, {
@@ -45,7 +45,7 @@ config.cache_store = :redis_store, {
   }
 ```
 
-指定缓存的命名空间`cache`是可选的，这段代码为缓存设置了 1 个小时的时效，当时效(time-to-live, TTL)到期时,将清楚过时的数据，现在我们将方法包裹在缓存的块中:
+指定缓存命名空间的`cache`是可选的，这段代码为缓存设置了 1 个小时的时效(time-to-live  TTL)，当时效到期时,将清除过时的数据，现在我们将方法包裹在缓存的块中:
 
 ```ruby
 class Event < ApplicationRecord
@@ -62,7 +62,7 @@ class Event < ApplicationRecord
 end
 ```
 
-_Rails.cache.fetch_ 将会检查 Redis 中是否存在指定的 key，如果 key 存在，将会返回缓存中的数据，而不会执行块中的代码，如果不存在，就会执行块中的代码，并将执行结果存在 redis 中，cache_key 是 Rails 提供的一种方法，它将组合模型名称，主键和上次更新的时间戳来创建唯一的 Redis 密钥，也可以添加**method**，它将使用特定方法的名称来进一步统一密钥，我们可以选择在某些方法上指定不同的时效。 Redis 中的数据将如下所示。
+**Rails.cache.fetch** 将会检查 Redis 中是否存在指定的 key，如果 key 存在，将会返回缓存中的数据，而不会执行块中的代码，如果不存在，就会执行块中的代码，并将执行结果存在 redis 中，cache_key 是 Rails 提供的一种方法，它将组合模型名称，主键和上次更新的时间戳来创建唯一的 Redis 密钥，也可以添加**method**，它将使用特定方法的名称来进一步统一密钥，我们可以选择在某些方法上指定不同的时效。 Redis 中的数据将如下所示。
 ```json
 {"db":0,"key":"cache:events/1-20180322035927682000000/tickets_count:","ttl":1415,
 "type":"string","value":"9",...},
