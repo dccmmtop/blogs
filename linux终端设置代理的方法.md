@@ -6,7 +6,7 @@ date: 2018-09-01 15:34:09
 首先检查你的 console 是否已经使用了代理
 
 ```shell
-curn ip.gs
+curl ip.gs
 ```
 
 如果使用的是国内的 ip 那么就说明没有使用代理
@@ -19,8 +19,6 @@ curn ip.gs
 export http_proxy="socks5://127.0.0.1:1080"
 export https_proxy="socks5://127.0.0.1:1080"
 ```
-
-![我是一张图片，但是你看不到我](http://ogbkru1bq.bkt.clouddn.com/选区_010.png)
 
 其中 `1080是soket监听的本地端口`
 

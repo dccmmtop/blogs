@@ -15,7 +15,7 @@ date: 2018-08-20 12:28:57
 # shutter 默认复制了图片到剪切板
 # require "clipboard"
 name = Time.now.to_i.to_s + ".png"
-`shutter -s -o #{name}`
+`shutter -s -o ~/图片/#{name}`
 # Clipboard.copy("/home/mc/图片/#{name}")
 ```
 
