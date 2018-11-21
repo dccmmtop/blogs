@@ -6,6 +6,7 @@ date: 2018-11-21 15:35:41
 ### 什么是多态关联
 
 假如有三个模型，分别是 用户， 产品， 图片。图片为用户所有，也为产品所有。我们可以创建两个 picture 的模型，如下
+
 `rails g modle picture_user user_id:integer name:string url:string`
 
 `rails g modle picture_product product_id:integer name:string url:string`
@@ -44,7 +45,7 @@ end
 
 pictureable 相当于一个接口，凡是拥有图片的模型都可以像 User 那样使用关联。
 
-可以使用`user.pictures.create(name: 'user_0', url: 'https://dcc.com')`来创建一条关联对象，创建之后我们发现在 picture 表中读了一条记录：
+可以使用`user.pictures.create(name: 'user_0', url: 'https://dcc.com')`来创建一条关联对象，创建之后我们发现在 picture 表中多了一条记录：
 
 ```txt
 id: 1, pictureable_type: 'User', pictureable_id: 1, name:"user_0", url:'https://dcc.com'
