@@ -38,7 +38,6 @@ inoremap jk <ESC>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
-
 nnoremap :e :w<cr>:e<cr>
 " 删除至行首
 nnoremap d0 v0d==
@@ -58,9 +57,6 @@ nmap g, g,zz
 nmap g; g;zz
 " 快速编辑vimrc，灵感稍纵即逝
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" 调整窗口大小
-"nnoremap <leader>- :10winc <<cr>
-"nnoremap <leader>= :10winc ><cr>
 nnoremap <leader>cn :set cursorcolumn!<cr>
 " 切换窗口
 nnoremap <leader>w <c-w>w
@@ -68,9 +64,8 @@ nnoremap <leader>w <c-w>w
 nnoremap <leader>o zozz
 " 折叠
 nnoremap <leader>g zczz
+" 删除末尾的空格
 nnoremap <leader>s :%s/\s\+$//g<cr>
-
-" 不要删除末尾的空格
 nnoremap <leader>rm :Emodel
 nnoremap <leader>rc :Econtroller
 nnoremap <leader>rv :Eview
@@ -89,6 +84,10 @@ call plug#begin('~/.vim/plugged')
 " 缩进线
 " Plug 'Yggdroot/indentLine'
 " let g:indentLine_char = '|'
+" 自动补全符号
+Plug 'Raimondi/delimitMate'
+
+Plug 'dccmmtop/vim_script'
 Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
@@ -171,40 +170,40 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 if g:airline_powerline_fonts == 0
-if !exists('g:airline_symbols')
-let g:airline_symbols = {}
-endif
-let g:airline_left_sep = '▶'
-let g:airline_left_alt_sep = '❯'
-let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = '❮'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '§'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.readonly = ''
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_left_sep = '▶'
+  let g:airline_left_alt_sep = '❯'
+  let g:airline_right_sep = '◀'
+  let g:airline_right_alt_sep = '❮'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.branch = '§'
+  let g:airline_symbols.whitespace = 'Ξ'
+  let g:airline_symbols.readonly = ''
 endif
 let g:airline_mode_map = {
-\ '__' : '-',
-\ 'n'  : '标准',
-\ 'i'  : '插入',
-\ 'R'  : '替换',
-\ 'c'  : '命令行',
-\ 'v'  : '可视',
-\ 'V'  : '可视',
-\ 's'  : '选择',
-\ 'S'  : '选择'
-\}
+      \ '__' : '-',
+      \ 'n'  : '标准',
+      \ 'i'  : '插入',
+      \ 'R'  : '替换',
+      \ 'c'  : '命令行',
+      \ 'v'  : '可视',
+      \ 'V'  : '可视',
+      \ 's'  : '选择',
+      \ 'S'  : '选择'
+      \}
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamemod = ':p:t' "只显示文件名，不显示路径内容。
 
 if g:airline_powerline_fonts == 0
-let g:airline#extensions#tabline#left_sep = '▶'
-let g:airline#extensions#tabline#left_alt_sep = '❯'
-let g:airline#extensions#tabline#right_sep = '◀'
-let g:airline#extensions#tabline#right_alt_sep = '❮'
+  let g:airline#extensions#tabline#left_sep = '▶'
+  let g:airline#extensions#tabline#left_alt_sep = '❯'
+  let g:airline#extensions#tabline#right_sep = '◀'
+  let g:airline#extensions#tabline#right_alt_sep = '❮'
 endif
 " " 映射切换buffer的键位
 nnoremap { :bp<CR>
@@ -230,5 +229,4 @@ let g:NERDTreeWinPos = "right"
 map <F2> :NERDTreeToggle<CR>
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
-noremap <leader>qn :cal qiniu#get_picture_url()<cr><CR>
 ```
