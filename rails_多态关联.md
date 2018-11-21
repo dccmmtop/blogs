@@ -94,7 +94,7 @@ end
 
 #### Step 2: 修改各 Model 得关联关系
 
-![img](http://img1.tuicool.com/a2QNJrE.jpg!web)
+![img](http://img1.tuicool.com/a2QNJrE.jpg)
 
 按照上面 E-R 图和代码修改模型结构，因为 Employee，Product 分别与 Picture 是一对多的关系，所以用到了 has_many 与 belongs_to 方法，再使用 polymorphic 与 as 来指明是多态关联。
 
