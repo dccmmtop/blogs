@@ -53,6 +53,8 @@ id: 1, pictureable_type: 'User', pictureable_id: 1, name:"user_0", url:'https://
 
 pictureable_type: 'User' 就是所属对象的标识，这样才可以使用 user.pictures 进行查询。由此我们知道，多态关联中，`xxxable_type, xxxable_id`字段是必不可少的。
 
+## **~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**
+
 下面是关于多态 view 页面使用的讲解[原文](https://blog.csdn.net/qwbtc/article/details/52035603)
 
 ### 什么是多态
