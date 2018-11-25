@@ -1,0 +1,61 @@
+---
+tags: postgres
+date: 2018-11-25 22:58:15
+---
+
+在初始化数据库系统时，有一个预定义的超级用户，这用户的名称与初始化该数据库的操作系统用户名相同，默认是 postgres，在这个超级用户连接数据库，然后创建出更多的用户。
+
+### 创建用户和角色
+
+创建用户与角色的语法如下：
+
+```sql
+CREATE ROLE name [ [ WITH] option [ ... ] ]
+// 或
+
+CREATE ROLE name [ [ WITH] option [ ... ] ]
+```
+
+在 postgres 中，用户与角色是没有区别的，除了 "CREATE USER" 默认创建出来的用户具有登录（LOGIN）权限，而 "CREATE ROLE"创建出来的用户默认没有登录权限之外，没有任何不同。
+
+上面的 option 可以是以下内容：
+
+- SUPERUSER | NOSUPERUSER: 表示创建出来的用户是否是超级用户，只能是超级用户才能创建超级用户。
+- CREATEDB | NOCREATEDB: 指定创建出来的用户是否具有执行 "CREATE DATABASE"的权限
+- CREATEROLE | NOCREATEROLE: 指定创建出来的用户是否具有创建其他用户的权限
+- CREATEUSER | NOCREATEUSER: 指定创建出来的用户是否具有创建其他用户的权限
+- INHERIT | NOINHERIT: 如果创建的用户拥有某一个或者某几个角色，这是若是指定 INHERIT，则表示用户自动拥有相应角色的权限，否则这个用户没有该角色的权限。
+- LOGIN|NOLOGIN：指定创建出来的用户是否有“LOGIN 的权限，可以临时地禁止一个用户的“LOGIN”权限，这时这个用户就不能连接到数据库了。
+- CONNECTION LIMIT connlimit：指定该用户可以使用的并发连接数量。默认值是-1， 表示没有限制
+- [ENCRYPTED | UNENCRYPTED] PASSWORD 'password'：用于控制存储在系统表里面的口令是否加密。
+- VALID UNTIL 'timestamp'：密码失效时间，如果不指定这个子句，那么口令将永远有效。
+- IN ROLE rolename[，...]：指定用户成为哪些角色的成员，请注意没有任何选项可以把新角色添加为管理员，必须使用独立的 GRANT 命令来做这件事情。
+- ROLE rolename[，...]：rolename 将成为这个新建的角色的成员。
+- ADMIN rolename[,．．．]：rolename 将有这个新建角色的 WITH ADMIN OPTION 权限。
+
+### 权限的管理
+
+在数据库中，每个数据库的逻辑结构对象（包括数据库）都有一个所有者， 也就是说任何数据库对象都是属于某个用户的，所有者默认就拥有所有权限。所以不需要把 对象的权限再赋给所有者。这也很好理解，自己创建的数据库对象，自己当然有全部的权限 了。当然，所有者出于安全考虑也可以选择废弃一些自己的权限。在 PostsgreSQL 数据库中， 删除一个对象及任意修改它的权力都不能赋予别人，它是所有者固有的，不能被赋予或撤销。 所有者也隐含地拥有把操作该对象的权限赋给别人的权利。
+
+一个用户的权限分为两类，一类是在创建用户时就指定的权限，这些权限如下：
+
+- 超级用户的权限
+- 创建数据库的权限
+- 是否允许 LOGIN 的权限
+
+这些权限是创建用户时指定的，后面可使用 ALTERROLE 命令来修改。
+还有一类权限，是由命令 GRANT 和 REVOKE 来管理的，这些权限如下：
+
+- 在数据库中创建模式(SCHEMA)
+- 允许在指定的数据库中创建临时表
+- 连接某个数据库
+- 在模式中创建数据库对象，如创建表、视图、函数等 在一些表中做 SELECT、UPDATE、INSERT、DELETE 等操作
+- 在一张表的具体列上进行 SELECT、UPDATE、INSERT 操作
+- 对序列进行查询（执行序列的 currval 函数）、使用（执行序列的 currval 函数和 nextval 函数）、更新等操作
+- 在声明表上创建触发器
+- 可以把表、索引等建到指定的表空间
+
+在使用时，需要分清楚上述两类权限，如果要给用户赋予创建数据库的权限，则需要使用“ALTERROLE”命令，而要给用户赋予创建模式的权限时，需要使用“GRANT”命令。
+
+“ALTERROLE”命令的格式如下：
+ALTER ROLE name [ [ WITH ] option] 命令中的"option'与“CREATEROLE”中的含义相同，这里就不再重复叙述了。
