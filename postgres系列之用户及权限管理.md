@@ -22,7 +22,7 @@ CREATE ROLE name [ [ WITH] option [ ... ] ]
 
 - SUPERUSER | NOSUPERUSER: 表示创建出来的用户是否是超级用户，只能是超级用户才能创建超级用户。
 - CREATEDB | NOCREATEDB: 指定创建出来的用户是否具有执行 "CREATE DATABASE"的权限
-- CREATEROLE | NOCREATEROLE: 指定创建出来的用户是否具有创建其他用户的权限
+- CREATEROLE | NOCREATEROLE: 指定创建出来的用户是否具有创建其他角色的权限
 - CREATEUSER | NOCREATEUSER: 指定创建出来的用户是否具有创建其他用户的权限
 - INHERIT | NOINHERIT: 如果创建的用户拥有某一个或者某几个角色，这是若是指定 INHERIT，则表示用户自动拥有相应角色的权限，否则这个用户没有该角色的权限。
 - LOGIN|NOLOGIN：指定创建出来的用户是否有“LOGIN 的权限，可以临时地禁止一个用户的“LOGIN”权限，这时这个用户就不能连接到数据库了。
@@ -43,7 +43,7 @@ CREATE ROLE name [ [ WITH] option [ ... ] ]
 - 创建数据库的权限
 - 是否允许 LOGIN 的权限
 
-这些权限是创建用户时指定的，后面可使用 ALTERROLE 命令来修改。
+这些权限是创建用户时指定的，后面可使用 ALTER ROLE 命令来修改。
 还有一类权限，是由命令 GRANT 和 REVOKE 来管理的，这些权限如下：
 
 - 在数据库中创建模式(SCHEMA)
@@ -55,9 +55,9 @@ CREATE ROLE name [ [ WITH] option [ ... ] ]
 - 在声明表上创建触发器
 - 可以把表、索引等建到指定的表空间
 
-在使用时，需要分清楚上述两类权限，如果要给用户赋予创建数据库的权限，则需要使用“ALTERROLE”命令，而要给用户赋予创建模式的权限时，需要使用“GRANT”命令。
+在使用时，需要分清楚上述两类权限，如果要给用户赋予创建数据库的权限，则需要使用“ALTER ROLE”命令，而要给用户赋予创建模式的权限时，需要使用“GRANT”命令。
 
-“ALTERROLE”命令的格式如下：
+“ALTER ROLE”命令的格式如下：
 ALTER ROLE name [ [ WITH ] option] 命令中的"option'与“CREATEROLE”中的含义相同，这里就不再重复叙述了。
 
 ### 总结
