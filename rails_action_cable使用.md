@@ -28,12 +28,48 @@ development:
 ```ruby
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    include SessionsHelper
     identified_by :current_user
 
     def connect
-      logged_in?
+      self.current_user = find_verified_user
     end
+
+    private
+      def find_verified_user
+        if cu_user = User.find_by(id: cookies.signed[:user_id])
+          cu_user
+        else
+          reject_unauthorized_connection
+        end
+      end
+  end
+end
+```
+
+action cable 中不能使用 session，我们可以用 cookie 来验证用户。下面在 SessionHelper 中加入 cookie，方便 action cable 使用
+
+```ruby
+module SessionsHelper
+  def log_in(user)
+    session[:user_address] = user.address
+    user = User.find_by(address: session[:user_address])
+    if user
+      cookies.permanent.signed[:user_id] = user.id
+    end
+  end
+
+  def current_user
+    @current_user ||= User.find_by(address: session[:user_address])
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def log_out
+    session.delete(:user_address)
+    @current_user = nil
+    cookies.delete(:user_id)
   end
 end
 ```
@@ -41,8 +77,7 @@ end
 ### 订阅
 
 ```coffee
-# App.block = App.cable.subscriptions.create {channel: "BlockChannel", address: "room_33"},
-App.block = App.cable.subscriptions.create {channel: "BlockChannel", address: web3.eth.accounts[0]},
+App.block = App.cable.subscriptions.create channel: "BlockChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -53,7 +88,7 @@ App.block = App.cable.subscriptions.create {channel: "BlockChannel", address: we
     alert(data)
 ```
 
-上述`channel: 'BlockChannel'`是必须的，声明像哪个频道订阅，`address: xxxx`是可选的，标明订阅者的身份，如果需要向指定的用户发布通知，需要设置这个参数。
+上述`channel: 'BlockChannel'`是必须的，声明像哪个频道订阅
 
 ### 处理订阅
 
@@ -61,8 +96,7 @@ App.block = App.cable.subscriptions.create {channel: "BlockChannel", address: we
 class BlockChannel < ApplicationCable::Channel
   def subscribed
     # 设置可以向哪些订阅者发布信息
-    stream_from "#{params[:address]}"
-    #stream_from "room_33"
+    stream_from current_user.address
   end
 
   def unsubscribed
@@ -77,7 +111,57 @@ class BlockChannel < ApplicationCable::Channel
 ```ruby
 # 向用户22发送一条通知
 ActionCable.server.broadcast User.find(22).address, data: 22
-
-# 向33号房间发送一条通知
-#ActionCable.server.broadcast "room_33", data: 22
 ```
+
+## 关于 action cable 的部署
+
+### cable.yml
+
+action cable 默认为“异步”适配器，当涉及多个进程时，它不起作用。因此，您需要配置 Action Cable 以使用其他适配器，例如 Redis 或 PostgreSQL。
+
+```yml
+production:
+  adapter: redis
+  url: redis://localhost:6379
+
+staging:
+  adapter: redis
+  url: redis://localhost:6379
+
+local: &local
+  adapter: redis
+  url: redis://localhost:6379
+
+development: *local
+test: *local
+```
+
+不要忘记启动 redis
+
+### 在和 rails 相同的主机和端口使用 action cable
+
+下面是 Rails 推荐的默认设置，也是最简单的设置.它的工作原理是将 ActionCable.server 挂载到 config / routes.rb 中的某个路径。这样，您的 Action Cable 服务器将在与您的应用程序相同的主机和端口上运行，但在子 URI 下运行。
+
+在 router.rb 文件中
+
+```ruby
+mount ActionCable.server => '/cable'
+```
+
+你需要配置一个 `location`块 配置 cable 的请求,像下面这样：
+
+```nginx
+server {
+    listen 80;
+    server_name www.foo.com;
+    root /path-to-your-app/public;
+    passenger_enabled on;
+
+    ### INSERT THIS!!! ###
+    location /cable {
+        passenger_force_max_concurrent_requests_per_process 0;
+    }
+}
+```
+
+为了应用的性能，必须添加`passenger_force_max_concurrent_requests_per_process 0`的配置，关于这个配置的详解请看 [文档](https://www.phusionpassenger.com/library/config/nginx/reference/#passenger_force_max_concurrent_requests_per_process)
