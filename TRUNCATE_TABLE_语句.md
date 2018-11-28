@@ -3,6 +3,8 @@ tags: postgresql
 date: 2018-09-07 09:06:40
 ---
 
+> 摘选 postgres 修炼之道-唐成
+
 TRUNCATE TABLE 语句的用途是**清空表内容。**不带 WHERE 条件子句的 DELETE 语句也表示清空表的内容。
 
 从执行结果看，两者实现了相同的功能，**但两者实现的原理是不样的。**
@@ -12,3 +14,5 @@ TRUNCATE TABLE 是 DDL 语句，即数据定义语句，相当于用重新定义
 ```sql
 TRUNCATE TABLE student_bak
 ```
+
+![1543386685.png](https://i.loli.net/2018/11/28/5bfe36e4c0feb.png?filename=1543386685.png)
