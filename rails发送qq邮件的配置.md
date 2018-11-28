@@ -3,8 +3,11 @@ tags: rails,email
 date: 2018-11-28 17:26:31
 ---
 
-rails 中使用邮件服务是非常方便的，直接加配置文件就可以，但是配置的时候很多时候会有问题，无法看到具体的报错信息，这里记录下 qq smtp 的踩坑过程。
-production.rb / development.rb 需要添加如下配置：
+rails 中使用邮件服务是非常方便的，直接加配置文件就可以，参考[指南](https://ruby-china.github.io/rails-guides/action_mailer_basics.html)
+
+qq 邮箱正确的配置如下
+
+production.rb / development.rb
 
 ```ruby
 ActionMailer::Base.delivery_method = :smtp
