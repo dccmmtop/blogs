@@ -165,3 +165,5 @@ server {
 ```
 
 为了应用的性能，必须添加`passenger_force_max_concurrent_requests_per_process 0`的配置，关于这个配置的详解请看 [文档](https://www.phusionpassenger.com/library/config/nginx/reference/#passenger_force_max_concurrent_requests_per_process)
+
+> 本文内容整理自 ruby-china 和 [passenger 的配置文档](https://www.phusionpassenger.com/library/config/nginx/action_cable_integration/)
