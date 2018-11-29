@@ -73,6 +73,8 @@ nnoremap <leader>rh :Ehelper
 nnoremap <leader>rj :Ejavascript
 nnoremap <leader>rs :Estylesheet
 nnoremap <leader>rt :Etask
+
+
 "colorscheme solarized
 colorscheme gruvbox
 "colorscheme molokai
