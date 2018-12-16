@@ -48,6 +48,8 @@ flash_success = (info) ->
 }
 ```
 
+---
+
 ### js helper
 
 ```coffee
