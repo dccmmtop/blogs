@@ -3,7 +3,7 @@ tags: aria2c,axel
 date: 2019-01-13 09:13:20
 ---
 
->  原文: https://www.yinquesiting.net/archives/109
+>  部分整理自: https://www.yinquesiting.net/archives/109
 
 部分网站需要登录才能下载，如果默认的下载速度很慢，想用[使用ipv6突破网络限速](https://www.yinquesiting.net/archives/80)说的aria2工具下载加速，需要替换cookie来骗过服务器。
 
