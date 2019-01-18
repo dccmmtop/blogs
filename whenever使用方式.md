@@ -51,8 +51,8 @@ whenever事实上是一个cron翻译器，它将rails中的ruby代码翻译成cr
 在`config/schedule.rb`文件中添加：
 
 ```ruby
-set :environment, :developmentevery
-2.minutes do  
+set :environment, :development
+every 2.minutes do  
   runner "Timetest.mytime"
 end
 ```
