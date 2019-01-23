@@ -84,3 +84,5 @@ server {
 ```bash
 ./certbot-auto renew
 ```
+
+然后重启 nginx

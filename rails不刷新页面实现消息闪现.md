@@ -47,3 +47,19 @@ flash_success = (info) ->
   padding: 10px;
 }
 ```
+
+---
+
+### js helper
+
+```coffee
+# 警告信息显示, to 显示在那个dom前(可以用 css selector)
+alert : (msg,to) ->
+  $(".alert").remove()
+  $(to).before("<div class='alert alert-warning'><a class='close' href='#' data-dismiss='alert'><i class='fa fa-close'></i></a>#{msg}</div>")
+
+# 成功信息显示, to 显示在那个dom前(可以用 css selector)
+notice : (msg,to) ->
+  $(".alert").remove()
+  $(to).before("<div class='alert alert-success'><a class='close' data-dismiss='alert' href='#'><i class='fa fa-close'></i></a>#{msg}</div>")
+```

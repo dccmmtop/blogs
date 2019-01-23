@@ -1,2 +1,1 @@
-## study record
-<span style="display:none">13123</p>
+- 添加 pacman 源---待整理
