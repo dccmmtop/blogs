@@ -4,6 +4,8 @@ date: 2018-08-09 17:17:19
 ---
 
 ```vim
+" 首先安装Plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 syntax enable
 set t_Co=256
 set background=dark
@@ -38,7 +40,6 @@ inoremap jk <ESC>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
-nnoremap :e :w<cr>:e<cr>
 " 删除至行首
 nnoremap d0 v0d==
 nnoremap d_ v0d==
@@ -66,13 +67,13 @@ nnoremap <leader>o zozz
 nnoremap <leader>g zczz
 " 删除末尾的空格
 nnoremap <leader>s :%s/\s\+$//g<cr>
-nnoremap <leader>rm :Emodel
-nnoremap <leader>rc :Econtroller
-nnoremap <leader>rv :Eview
-nnoremap <leader>rh :Ehelper
-nnoremap <leader>rj :Ejavascript
-nnoremap <leader>rs :Estylesheet
-nnoremap <leader>rt :Etask
+nnoremap <leader>rm :Emodel 
+nnoremap <leader>rc :Econtroller 
+nnoremap <leader>rv :Eview j
+nnoremap <leader>rh :Ehelper 
+nnoremap <leader>rj :Ejavascript 
+nnoremap <leader>rs :Estylesheet 
+nnoremap <leader>rt :Etask 
 
 
 "colorscheme solarized
@@ -95,14 +96,14 @@ Plug 'pangloss/vim-javascript'
 let javascript_enable_domhtmlcss = 1
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'SirVer/ultisnips'
-Plug 'isRuslan/vim-es6'
+"Plug 'isRuslan/vim-es6'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " js代码格式化
 let g:prettier#autoformat = 0
 " 异步格式化
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-autocmd BufWritePre *.md PrettierAsync
+" autocmd BufWritePre *.md PrettierAsync
 " 发生语法错误时，不打开新的窗口提示
 let g:prettier#quickfix_enabled = 0
 Plug 'honza/vim-snippets' "optional
@@ -214,7 +215,7 @@ nnoremap ]\ :bd<CR>
 " Initialize plugin system
 
 
-
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 "文件搜索"
