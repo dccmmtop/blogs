@@ -3,6 +3,8 @@ tags: postgresql
 date: 2019-02-16 20:31:00
 ---
 
+整理自 https://blog.csdn.net/elesos/article/details/80059841
+
 ### 需求
 
 装的新系统，要把之前备份的数据迁移过来
