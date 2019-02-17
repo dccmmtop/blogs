@@ -12,7 +12,7 @@ yay -s shutter
 ### 插件
 
 ```shell
-yay -s libgoo-canvas-perl # 使用编辑图片功能
+yay -s perl-goo-canvas # 使用编辑图片功能
 ```
 
 ### 快捷键脚本运行
