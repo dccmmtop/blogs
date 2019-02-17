@@ -86,3 +86,5 @@ export XMODIFIERS="@im=fcitx"
 ![1550379292.png](https://i.loli.net/2019/02/17/5c68e93816d99.png?filename=1550379292.png)
 
 10. sudo pacman -S google-chrome
+
+11. sudo pacman -S the_silver_searcher
