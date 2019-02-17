@@ -77,7 +77,7 @@ export XMODIFIERS="@im=fcitx"
 
 6.  sudo pacman -S gdb
 
-7. sudo pacman -S wps-office
+7. sudo pacman -S wps-office ttf-wps-fonts
 
 8. sudo pacman -S shutter perl-goo-canvas # 截图工具
 
