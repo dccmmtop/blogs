@@ -88,3 +88,9 @@ export XMODIFIERS="@im=fcitx"
 10. sudo pacman -S google-chrome
 
 11. sudo pacman -S the_silver_searcher
+
+12. sudo pacman -S yay
+
+13. yay -s polipo # socks5 代理转换为 http 代理 
+
+关于polipo 设置请看 https://dccmm.world/topics/Linux_shadowsocks%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8C%96%E4%B8%BAHttp%E4%BB%A3%E7%90%86
