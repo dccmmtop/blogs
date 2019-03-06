@@ -8,6 +8,8 @@ date: 2018-12-28 11:31:57
 
 2.  打开 .kde/share/apps/konsole/gruvbox.colortheme,清空文件内容
 
+    在 manjaro 中， 该文件位于 ~/.local/share/konsole/ 目录下
+
 3.  复制 https://github.com/morhetz/gruvbox-contrib/blob/master/konsole/Gruvbox_dark.colorscheme, 到 gruvbox.colorscheme.
 
 Gruvbox_dark.colorscheme
