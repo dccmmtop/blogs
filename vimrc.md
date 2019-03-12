@@ -4,8 +4,8 @@ date: 2018-08-09 17:17:19
 ---
 
 ```vim
-" 首先安装Plug
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" cp -r ~/.vim/plugged/gruvbox/colors ~/.vim/
 syntax enable
 set t_Co=256
 set background=dark
@@ -40,6 +40,7 @@ inoremap jk <ESC>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
+" nnoremap :e :w<cr>:e<cr>
 " 删除至行首
 nnoremap d0 v0d==
 nnoremap d_ v0d==
@@ -50,12 +51,13 @@ nnoremap j  gj
 nnoremap gj j
 " 从系统剪切板粘贴
 nnoremap P "+p
-" 复制到系统剪切板
+" " 复制到系统剪切板
 vmap Y "+y
 nmap Y "+y
 " 跳转到上次修改的位置，并移到屏幕中间
 nmap g, g,zz
 nmap g; g;zz
+nmap * *zz
 " 快速编辑vimrc，灵感稍纵即逝
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>cn :set cursorcolumn!<cr>
@@ -67,13 +69,17 @@ nnoremap <leader>o zozz
 nnoremap <leader>g zczz
 " 删除末尾的空格
 nnoremap <leader>s :%s/\s\+$//g<cr>
-nnoremap <leader>rm :Emodel 
-nnoremap <leader>rc :Econtroller 
-nnoremap <leader>rv :Eview j
-nnoremap <leader>rh :Ehelper 
-nnoremap <leader>rj :Ejavascript 
-nnoremap <leader>rs :Estylesheet 
-nnoremap <leader>rt :Etask 
+nnoremap <leader>rm :Emodel
+nnoremap <leader>rc :Econtroller
+nnoremap <leader>rv :Eview
+nnoremap <leader>rh :Ehelper
+nnoremap <leader>rj :Ejavascript
+nnoremap <leader>rs :Estylesheet
+nnoremap <leader>rt :Etask
+" " 映射切换buffer的键位
+nnoremap { :bp<CR>
+nnoremap } :bn<CR>
+nnoremap ]\ :bd<CR>
 
 
 "colorscheme solarized
@@ -84,41 +90,20 @@ colorscheme gruvbox
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+" Plug 'chrisbra/csv.vim'
+Plug 'vim-scripts/indentpython.vim'
 " 缩进线
 " Plug 'Yggdroot/indentLine'
 " let g:indentLine_char = '|'
 " 自动补全符号
 Plug 'Raimondi/delimitMate'
-
 Plug 'dccmmtop/vim_script'
-Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-let javascript_enable_domhtmlcss = 1
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'SirVer/ultisnips'
-"Plug 'isRuslan/vim-es6'
+Plug 'isRuslan/vim-es6'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-" js代码格式化
-let g:prettier#autoformat = 0
-" 异步格式化
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-" autocmd BufWritePre *.md PrettierAsync
-" 发生语法错误时，不打开新的窗口提示
-let g:prettier#quickfix_enabled = 0
 Plug 'honza/vim-snippets' "optional
-
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_override_foldtext = 0
-let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_fenced_languages = ['csharp=cs']
-let g:vim_markdown_new_list_item_indent = 2
-
 Plug 'mattn/emmet-vim'
 " coffee script color
 Plug 'kchmck/vim-coffee-script'
@@ -126,24 +111,13 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
-
 " Multiple Plug commands can be written in a single line using | separators
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
 Plug 'tpope/vim-surround'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
 "注释
 Plug 'tomtom/tcomment_vim'
 "快速定位
@@ -151,11 +125,6 @@ Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 map  <Tab> <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to
-" EasyMotion.
-" " Without these mappings, `n` & `N` works fine. (These mappings just provide
-" " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 " Gif config
@@ -208,28 +177,19 @@ if g:airline_powerline_fonts == 0
   let g:airline#extensions#tabline#right_sep = '◀'
   let g:airline#extensions#tabline#right_alt_sep = '❮'
 endif
-" " 映射切换buffer的键位
-nnoremap { :bp<CR>
-nnoremap } :bn<CR>
-nnoremap ]\ :bd<CR>
 " Initialize plugin system
-
-
 Plug 'kien/ctrlp.vim'
 call plug#end()
 
 "文件搜索"
-set runtimepath^=~/.vim/plugged/ctrlp.vim
+" set runtimepath^=~/.vim/plugged/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " 设置过滤不进行查找的后缀名
 " let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|pyc)$'
 "end "
 let g:NERDTreeWinPos = "right"
-
-
 " NERDTree config"
-map <F2> :NERDTreeToggle<CR>
-
+map <leader>tt :NERDTreeToggle<CR>
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 ```
