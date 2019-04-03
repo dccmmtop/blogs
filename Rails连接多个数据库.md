@@ -24,8 +24,8 @@ trademark_development:
   # 如果是远程的数据库添加如下信息
   #username: username
   #password: 123456
-  #host: 192.168.1.1
-  #port: 3306
+  #host: xxxx
+  #port: xxx
 
 trademark_test:
   <<: *trademark_default
