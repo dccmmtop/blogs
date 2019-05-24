@@ -1,13 +1,14 @@
 ---
-tags: config
+tags: terminator
+date: 2019-05-24 19:28:30
 ---
 
-```
+```txt
 [global_config]
   title_transmit_bg_color = "#009999"
   focus = system
   use_system_font = False
-  font = Mono 15
+  font = Hack 15
 [profiles]
   [[default]]
     # gruvbox-dark
