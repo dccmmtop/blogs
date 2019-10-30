@@ -1,5 +1,5 @@
 ---
-tags: react-native,router
+tags: [react-native,router]
 date: 2018-08-27 09:04:05
 ---
 

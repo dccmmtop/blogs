@@ -1,5 +1,5 @@
 ---
-tags: rails
+tags: [rails]
 ---
 
 ```ruby

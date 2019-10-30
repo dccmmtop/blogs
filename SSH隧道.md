@@ -1,5 +1,5 @@
 ---
-tags: ssh,linux
+tags: [ssh,linux]
 date: 2018-08-19 17:04:28
 ---
 

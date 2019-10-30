@@ -1,5 +1,5 @@
 ---
-tags: maven
+tags: [maven]
 date: 2019-10-16 00:06:14
 ---
 

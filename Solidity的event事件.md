@@ -1,5 +1,5 @@
 ---
-tags: contract,solidity
+tags: [contract,solidity]
 ---
 
 ### 本文属于转载内容，[转载来源](http://me.tryblockchain.org/blockchain-solidity-event.html)

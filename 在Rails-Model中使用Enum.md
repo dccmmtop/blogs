@@ -1,5 +1,5 @@
 ---
-tags: rails,枚举
+tags: [rails,枚举]
 date: 2018-08-27 10:15:46
 ---
 

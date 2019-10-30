@@ -1,5 +1,5 @@
 ---
-tags: rails,console
+tags: [rails,console]
 date: 2018-08-07 23:58:40
 ---
 

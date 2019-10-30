@@ -1,5 +1,5 @@
 ---
-tags: DIY_script,vim
+tags: [DIY_script,vim]
 ---
 
 ### 选中的图片地址，将图片上传到七牛云，并得到外链

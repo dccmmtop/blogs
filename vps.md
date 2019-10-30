@@ -1,5 +1,5 @@
 ---
-tags: vps
+tags: [vps]
 ---
 
 ### shadowsocks 服务器安装

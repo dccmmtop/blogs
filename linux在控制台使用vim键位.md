@@ -1,5 +1,5 @@
 ---
-tags: linux,vim,shell
+tags: [linux,vim,shell]
 date: 2018-12-02 14:56:17
 ---
 

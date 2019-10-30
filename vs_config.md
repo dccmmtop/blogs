@@ -1,5 +1,5 @@
 ---
-tags: vs
+tags: [vs]
 ---
 ```json
 {

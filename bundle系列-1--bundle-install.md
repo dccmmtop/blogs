@@ -1,5 +1,5 @@
 ---
-tags: bundle
+tags: [bundle]
 date: 2018-09-27 10:40:42
 ---
 

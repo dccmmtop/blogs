@@ -1,5 +1,5 @@
 ---
-tags: rails,健壮参数
+tags: [rails,健壮参数]
 ---
 
 ```ruby

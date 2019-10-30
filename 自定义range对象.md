@@ -1,5 +1,5 @@
 ---
-tags: ruby,range
+tags: [ruby,range]
 date: 2018-09-27 09:10:50
 ---
 

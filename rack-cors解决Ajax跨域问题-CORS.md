@@ -1,5 +1,5 @@
 ---
-tags: rails,CORS
+tags: [rails,CORS]
 date: 2018-09-19 09:25:49
 ---
 

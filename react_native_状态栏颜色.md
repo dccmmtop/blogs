@@ -1,5 +1,5 @@
 ---
-tags: react_naitve
+tags: [react_naitve]
 date: 2018-08-08 11:04:58
 ---
 

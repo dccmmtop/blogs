@@ -1,5 +1,5 @@
 ---
-tags: redis
+tags: [redis]
 date: 2019-09-15 22:47
 ---
 

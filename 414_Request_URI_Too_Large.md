@@ -1,5 +1,5 @@
 ---
-tags: nginx,rails,http
+tags: [nginx,rails,http]
 date: 2018-08-08 10:56:22
 ---
 

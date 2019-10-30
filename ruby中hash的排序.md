@@ -1,5 +1,5 @@
 ---
-tags: hash,sort
+tags: [hash,sort]
 date: 2019-01-15 11:45:27
 ---
 > 翻译自 https://medium.com/@florenceliang/some-notes-about-using-hash-sort-by-in-ruby-f4b3a700fc33

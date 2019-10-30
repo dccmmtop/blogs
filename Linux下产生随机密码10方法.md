@@ -1,5 +1,5 @@
 ---
-tags: linux,加密
+tags: [linux,加密]
 date: 2018-05-29 15:51:43
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: rails,分页
+tags: [rails,分页]
 date: 2018-08-28 12:26:47
 ---
 

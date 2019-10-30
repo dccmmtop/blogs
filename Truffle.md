@@ -1,5 +1,5 @@
 ---
-tags: truffle,contract
+tags: [truffle,contract]
 ---
 
 ## 安装 Truffle 4.0

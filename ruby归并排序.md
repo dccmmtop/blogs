@@ -1,5 +1,5 @@
 ---
-tags: ruby,算法,sort
+tags: [ruby,算法,sort]
 date: 2018-08-22 13:16:15
 ---
 

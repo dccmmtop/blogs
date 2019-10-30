@@ -1,5 +1,5 @@
 ---
-tags: linux,gif
+tags: [linux,gif]
 date: 2018-09-11 15:25:11
 ---
 

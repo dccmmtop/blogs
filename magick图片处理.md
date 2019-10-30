@@ -1,5 +1,5 @@
 ---
-tags: 图片处理,magick
+tags: [图片处理,magick]
 date: 2018-08-15 10:34:48
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: proxy,linux
+tags: [proxy,linux]
 date: 2018-12-11 13:46:48
 ---
 

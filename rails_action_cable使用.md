@@ -1,5 +1,5 @@
 ---
-tags: rails,cable
+tags: [rails,cable]
 date: 2018-11-18 17:24:00
 ---
 

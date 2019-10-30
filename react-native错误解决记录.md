@@ -1,5 +1,5 @@
 ---
-tags: react-native,error-records
+tags: [react-native,error-records]
 date: 2018-11-03 16:10:19
 ---
 

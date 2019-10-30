@@ -1,5 +1,5 @@
 ---
-tags: diy_script
+tags: [diy_script]
 ---
 
 ```ruby

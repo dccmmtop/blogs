@@ -1,5 +1,5 @@
 ---
-tags: ctags,vim
+tags: [ctags,vim]
 date: 2018-08-14 11:51:23
 ---
 

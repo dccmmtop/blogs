@@ -1,5 +1,5 @@
 ---
-tags: vimrc
+tags: [vimrc]
 date: 2018-08-09 17:17:19
 ---
 

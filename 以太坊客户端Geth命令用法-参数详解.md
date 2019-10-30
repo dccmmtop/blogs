@@ -1,5 +1,5 @@
 ---
-tags: geth,contract
+tags: [geth,contract]
 ---
 
 ## [转载](https://learnblockchain.cn/2017/11/29/geth_cmd_options/)

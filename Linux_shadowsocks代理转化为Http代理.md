@@ -1,5 +1,5 @@
 ---
-tags: proxy
+tags: [proxy]
 date: 2019-02-14 17:09:31
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: form-for,rails
+tags: [form-for,rails]
 date: 2018-08-23 15:26:20
 ---
 

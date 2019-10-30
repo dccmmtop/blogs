@@ -1,5 +1,5 @@
 ---
-tags: truffle
+tags: [truffle]
 date: 2018-08-08 11:02:14
 ---
 

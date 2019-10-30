@@ -1,5 +1,5 @@
 ---
-tags: gradle
+tags: [gradle]
 date: 2018-12-04 00:37
 ---
 

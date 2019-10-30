@@ -1,5 +1,5 @@
 ---
-tags: rails,whenever
+tags: [rails,whenever]
 date: 2018-09-01 16:00:05
 ---
 

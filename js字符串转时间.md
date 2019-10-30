@@ -1,5 +1,5 @@
 ---
-tags: js,Date
+tags: [js,Date]
 ---
 
 `new Date(dateString)`由于 dateString 不规范，会引起`Invalid Date`错误

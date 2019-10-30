@@ -1,5 +1,5 @@
 ---
-tags: yakuake,color
+tags: [yakuake,color]
 date: 2018-12-28 11:31:57
 ---
 

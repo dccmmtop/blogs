@@ -1,5 +1,5 @@
 ---
-tags: aria2c,axel
+tags: [aria2c,axel]
 date: 2019-01-13 09:13:20
 ---
 

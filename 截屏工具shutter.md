@@ -1,5 +1,5 @@
 ---
-tags: shutter,截屏,linux
+tags: [shutter,截屏,linux]
 date: 2018-08-20 12:28:57
 ---
 

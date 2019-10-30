@@ -1,5 +1,5 @@
 ---
-tags: ruby,heredoc
+tags: [ruby,heredoc]
 date: 2018-11-22 09:23:36
 ---
 

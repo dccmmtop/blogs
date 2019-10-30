@@ -1,5 +1,5 @@
 ---
-tags: postgresql
+tags: [postgresql]
 date: 2019-02-16 20:31:00
 ---
 

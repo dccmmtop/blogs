@@ -1,5 +1,5 @@
 ---
-tags: postgres,窗口函数
+tags: [postgres,窗口函数]
 date: 2019-03-05 09:29:57
 ---
 

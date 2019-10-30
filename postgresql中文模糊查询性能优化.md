@@ -1,5 +1,5 @@
 ---
-tags: 模糊查询,postgesql,pg_trgm
+tags: [模糊查询,postgesql,pg_trgm]
 date: 2019-03-24 10:05:23
 ---
 

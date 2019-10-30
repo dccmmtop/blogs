@@ -1,5 +1,5 @@
 ---
-tags: shutter
+tags: [shutter]
 date: 2019-02-14 17:05:26
 ---
 

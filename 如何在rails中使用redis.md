@@ -1,5 +1,5 @@
 ---
-tags: rails,redis
+tags: [rails,redis]
 date: 2018-10-29 17:18:24
 ---
 

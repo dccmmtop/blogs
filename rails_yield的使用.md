@@ -1,5 +1,5 @@
 ---
-tags: rails,yield,content_for
+tags: [rails,yield,content_for]
 date: 2018-08-12 15:43:39
 ---
 

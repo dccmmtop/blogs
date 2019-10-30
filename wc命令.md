@@ -1,5 +1,5 @@
 ---
-tags: linux,wc
+tags: [linux,wc]
 date: 2018-08-19 16:35:57
 ---
 

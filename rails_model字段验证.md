@@ -1,5 +1,5 @@
 ---
-tags: rails,validates
+tags: [rails,validates]
 ---
 
 ```ruby

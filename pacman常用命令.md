@@ -1,5 +1,5 @@
 ---
-tags: pacman
+tags: [pacman]
 date: 2019-01-23 11:38:56
 ---
 

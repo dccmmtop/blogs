@@ -1,5 +1,5 @@
 ---
-tags: linux
+tags: [linux]
 date: 2019-01-14 08:43:30
 ---
 

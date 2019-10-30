@@ -1,5 +1,5 @@
 ---
-tags: pryrc
+tags: [pryrc]
 date: 2019-02-13 17:48:50
 ---
 

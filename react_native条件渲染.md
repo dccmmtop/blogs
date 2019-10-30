@@ -1,5 +1,5 @@
 ---
-tags: react-native
+tags: [react-native]
 ---
 
 根据不同的条件渲染不同的组件

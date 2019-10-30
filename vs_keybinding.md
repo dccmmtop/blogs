@@ -1,5 +1,5 @@
 ---
-tags: vscode
+tags: [vscode]
 ---
 ```json
 [

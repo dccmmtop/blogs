@@ -1,5 +1,5 @@
 ---
-tags: arch
+tags: [arch]
 date: 2019-02-14 16:57:53
 ---
 

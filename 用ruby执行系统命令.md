@@ -1,5 +1,5 @@
 ---
-tags: ruby,system
+tags: [ruby,system]
 date: 2019-01-03 09:50:00
 ---
 

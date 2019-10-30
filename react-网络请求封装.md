@@ -1,5 +1,5 @@
 ---
-tags: react
+tags: [react]
 date: 2018-09-18 15:37:48
 ---
 

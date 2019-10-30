@@ -1,5 +1,5 @@
 ---
-tags: solidity,geth,contract
+tags: [solidity,geth,contract]
 ---
 
 如果你对于以太坊智能合约开发还没有概念（本文会假设你已经知道这些概念），建议先阅读[入门篇](https://learnblockchain.cn/2017/11/20/whatiseth/)。

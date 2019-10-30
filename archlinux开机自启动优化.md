@@ -1,6 +1,6 @@
 ---
 date: 2018-12-25
-tags: arch,自启
+tags: [arch,自启]
 ---
 
 

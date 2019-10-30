@@ -1,5 +1,5 @@
 ---
-tags: rake,task
+tags: [rake,task]
 date: 2018-05-29 16:03:39
 ---
 

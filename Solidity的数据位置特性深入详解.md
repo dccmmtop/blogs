@@ -1,5 +1,5 @@
 ---
-tags: solidity
+tags: [solidity]
 ---
 
 [转载](http://me.tryblockchain.org/solidity-data-location.html)

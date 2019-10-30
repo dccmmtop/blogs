@@ -1,5 +1,5 @@
 ---
-tags: rails
+tags: [rails]
 date: 2018-11-21 15:35:41
 ---
 

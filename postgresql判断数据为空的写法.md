@@ -1,5 +1,5 @@
 ---
-tags: rails,postgersql
+tags: [rails,postgersql]
 date: 2018-08-27 14:26:46
 ---
 

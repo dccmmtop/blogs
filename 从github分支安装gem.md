@@ -1,5 +1,5 @@
 ---
-tags: gem,ruby
+tags: [gem,ruby]
 date: 2018-09-27 10:12:16
 ---
 

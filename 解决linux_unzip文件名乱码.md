@@ -1,5 +1,5 @@
 ---
-tags: linux
+tags: [linux]
 date: 2018-08-09 15:14:16
 ---
 

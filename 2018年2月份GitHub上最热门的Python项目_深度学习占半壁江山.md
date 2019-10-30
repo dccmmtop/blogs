@@ -1,5 +1,5 @@
 ---
-tags: python
+tags: [python]
 date: 2018-08-08 18:02:18
 ---
 

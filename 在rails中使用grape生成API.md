@@ -1,5 +1,5 @@
 ---
-tags: rails,api,grape
+tags: [rails,api,grape]
 date: 2018-08-08 11:29:47
 ---
 

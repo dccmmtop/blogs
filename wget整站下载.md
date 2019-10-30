@@ -1,5 +1,5 @@
 ---
-tags: wget
+tags: [wget]
 date: 2018-06-22 10:56:45
 ---
 

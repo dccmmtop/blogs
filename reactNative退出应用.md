@@ -1,5 +1,5 @@
 ---
-tags: android
+tags: [android]
 date: 2019-02-25 09:24:49
 ---
 

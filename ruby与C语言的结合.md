@@ -1,5 +1,5 @@
 ---
-tags: ruby,c
+tags: [ruby,c]
 date: 2018-09-21 17:03:09
 ---
 

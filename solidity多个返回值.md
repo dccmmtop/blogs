@@ -1,5 +1,5 @@
 ---
-tags: solidity
+tags: [solidity]
 ---
 
 ```solidity

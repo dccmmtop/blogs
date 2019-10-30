@@ -1,5 +1,5 @@
 ---
-tags: postgresql,备份,恢复
+tags: [postgresql,备份,恢复]
 date: 2018-12-11 13:47:40
 ---
 

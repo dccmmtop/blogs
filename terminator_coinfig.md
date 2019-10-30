@@ -1,5 +1,5 @@
 ---
-tags: terminator
+tags: [terminator]
 date: 2019-05-24 19:28:30
 ---
 

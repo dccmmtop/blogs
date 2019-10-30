@@ -1,5 +1,5 @@
 ---
-tags: rails,belongs_to
+tags: [rails,belongs_to]
 date: 2018-08-17 14:40:07
 ---
 

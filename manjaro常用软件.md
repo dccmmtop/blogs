@@ -1,5 +1,5 @@
 ---
-tags: manjaro,linux
+tags: [manjaro,linux]
 date: 2019-02-17 12:42:31
 ---
 

@@ -1,5 +1,5 @@
 ---
-tags: rails,缓存,cache
+tags: [rails,缓存,cache]
 date: 2018-08-28 12:41:43
 ---
 

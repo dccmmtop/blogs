@@ -1,5 +1,5 @@
 ---
-tags: soliity，contract
+tags: [soliity，contract]
 ---
 
 [摘自于 stackflow](https://stackoverflow.com/questions/44982437/what-does-a-modifier-do-in-solidity)
