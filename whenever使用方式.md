@@ -1,4 +1,7 @@
-## whenever 使用方式
+---
+tags: [定时任务,whenever]
+date: 2019-10-31 22:04:20
+---
 
 根据项目的进展，我们需要实现后台进行定时读取信息的功能，而最关键的实现部分是周期性功能，根据调研，决定使用whenever来实现这一功能。
 
@@ -14,6 +17,7 @@ github：[https://github.com/javan/whenever](https://link.jianshu.com?t=https://
 
 whenever周期性机制
 
+<!--more-->
 我们来看一下github上面是怎么说的：
 
 Whenever is a Ruby gem that provides a clear syntax for writing and deploying cron jobs.

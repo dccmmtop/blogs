@@ -12,7 +12,7 @@ tags: [solidity]
 `数据位置`[1](http://me.tryblockchain.org/solidity-data-location.html#fn1)，变量的存储位置属性。有三种类型，`memory`，`storage`和`calldata`。最后一种数据位置比较特殊，一般只有外部函数的参数（不包括返回参数）被强制指定为`calldata`。这种数据位置是只读的，不会持久化到区块链。一般我们可以选择指定的是`memory`和`storage`。
 
 `memory`存储位置同我们普通程序的内存类似。即分配，即使用，越过作用域即不可被访问，等待被回收。而对于`storage`的变量，数据将永远存在于区块链上。
-
+<!--more-->
 # 2. 默认数据位置
 
 ## 2.1 参数及局部变量

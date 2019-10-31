@@ -1,5 +1,6 @@
 ---
 tags: [truffle,contract]
+date: 2018-09-01 12:00:00
 ---
 
 ## 安装 Truffle 4.0
@@ -24,7 +25,7 @@ npm install -g ethereumjs-testrpc
 + ethereumjs-testrpc@6.0.1
 added 1 package and updated 2 packages in 10.648s
 ```
-
+<!--more-->
 ## 初始化一个 Truffle 项目
 
 ```shell

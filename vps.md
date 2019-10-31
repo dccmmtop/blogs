@@ -21,7 +21,7 @@ sudo apt-get install python-pip
 ```shell
 sudo pip install shadowsocks
 ```
-
+<!--more-->
 - 运行 shadowsocks 服务器
   启动命令如下：如果要停止运行，将命令中的 start 改成 stop。
 
